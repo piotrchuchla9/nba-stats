@@ -6,6 +6,7 @@ import {
     IconTeams,
 } from "@/public/icons";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../public/images/logo.png";
 import NavElement from "./nav-element";
 
@@ -15,7 +16,9 @@ export default function Navbar() {
       <div className="flex">
         <Image width={32} src={logo} alt={"NBA Stats"} />
         <div className="flex items-center">
-          <p className="pl-3 font-semibold text-3xl">NBA Stats</p>
+          <Link className="pl-3 font-semibold text-3xl" href={"/"}>
+            NBA Stats
+          </Link>
         </div>
       </div>
       <div className="h-full py-20 overflow-y-auto flex flex-col">
