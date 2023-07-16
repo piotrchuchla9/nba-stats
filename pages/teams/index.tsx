@@ -1,3 +1,5 @@
+import Hero from "@/components/hero";
+
 export default function Teams() {
-  return <p className="bg-red-200">Teams</p>;
+  return <Hero text={"TEAMS"} desc={"Check it out stats about teams"} />;
 }

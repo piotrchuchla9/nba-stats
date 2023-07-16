@@ -12,7 +12,7 @@ import NavElement from "./nav-element";
 
 export default function Navbar() {
   return (
-    <div className="p-12 h-screen border-r-2 border-gray-600">
+    <div className="p-12 pr-0 h-screen border-r-2 border-gray-600">
       <div className="flex">
         <Image width={32} src={logo} alt={"NBA Stats"} />
         <div className="flex items-center">

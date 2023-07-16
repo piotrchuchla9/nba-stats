@@ -1,3 +1,5 @@
+import Hero from "@/components/hero";
+
 export default function Stats() {
-  return <p className="bg-blue-400">Stats</p>;
+  return <Hero text={"STATS"} desc={"Check it out the deep specific stats"} />;
 }

@@ -19,17 +19,21 @@ export default function PageTransition({ children }: PageTransitionProps) {
         variants={{
           pageInitial: {
             opacity: 0,
+            x: "100%",
           },
           pageAnimate: {
             opacity: 1,
+            x: 0,
           },
           pageExit: {
             opacity: 0,
+            x: "-100%",
           },
         }}
         transition={{
           duration: 0.3,
         }}
+        style={{ position: "absolute", height: "90%", zIndex: 0 }}
       >
         {children}
       </motion.div>

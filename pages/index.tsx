@@ -1,3 +1,5 @@
+import Hero from "@/components/hero";
+
 export default function Index() {
-  return <p className="bg-gray-100">Players</p>;
+  return <Hero text={"PLAYERS"} desc={"Check it out player stats"} />;
 }

@@ -22,10 +22,10 @@ function App({ Component, pageProps }: AppProps) {
       <div className={montserrat.className}>
         <main className="w-full overflow-hidden">
           <div className="flex">
-            <div className="w-96">
+            <div className="w-96 z-10">
               <Navbar />
             </div>
-            <div className="flex-1 h-screen p-12 overflow-y-auto">
+            <div className="flex-1 h-screen p-12 overflow-y-auto relative">
               <PageTransition>{<Component {...pageProps} />}</PageTransition>
             </div>
           </div>

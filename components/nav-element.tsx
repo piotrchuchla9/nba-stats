@@ -17,7 +17,7 @@ export default function NavElement(props: NavElementProps) {
   const containerClasses = twMerge("py-4");
   const itemClasses = twMerge(
     "flex gap-4",
-    isActive && "text-blue-300",
+    isActive && "text-blue-300 border-r-4 border-blue-300",
     "group hover:text-blue-300"
   );
   const textClasses = twMerge("text-xl", isActive && "text-blue-300");
