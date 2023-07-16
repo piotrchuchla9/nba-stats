@@ -180,36 +180,6 @@ export default function Navbar() {
               <button>close</button>
             </form>
           </dialog>
-          {/* <dialog id="mail_modal" className="modal">
-            <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                ✕
-              </button>
-              <h3 className="font-bold text-lg"></h3>
-              <p className="py-4 text-2xl text-center font-semibold">
-                {t("mailHeader")}
-              </p>
-              <Input
-                title={"form.title"}
-                placeholder={"form.exampleTitle"}
-                onChange={(value) => setForm({ ...form, title: value })}
-                validate={validateTitle}
-                error={!isTitleValid}
-                errorMessage={"form.errorTitle"}
-              />
-              <TextArea
-                title={"form.message"}
-                placeholder={"form.exampleMessage"}
-                onChange={(value) => setForm({ ...form, message: value })}
-                validate={validateMessage}
-                error={!isMessageValid}
-                errorMessage={"form.errorMessage"}
-              />
-              <button type="submit" className="btn w-full">
-                {t("send")}
-              </button>
-            </form>
-          </dialog> */}
           <details className="dropdown">
             <summary className="btn m-0 p-0 bg-inherit border-0 hover:bg-inherit">
               <div className="flex gap-4">

@@ -40,7 +40,7 @@ export function Input(props: InputProps) {
       <input
         type="text"
         placeholder={t(placeholder)}
-        className="input input-bordered w-full"
+        className="input input-bordered w-full placeholder:text-red-200"
         onChange={handleChange}
       />
       <label className="label">
