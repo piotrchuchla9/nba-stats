@@ -41,6 +41,33 @@ export default function Navbar() {
     message: "",
   });
 
+  const validatePhone = (value: string) => {
+    if (value.length > 20) {
+      return t("phoneValidation.maxLength");
+    }
+    // Add additional validation logic if needed
+    return undefined;
+  };
+
+  const validateTitle = (value: string) => {
+    if (value.length < 3) {
+      return t("titleValidation.minLength");
+    }
+    // Add additional validation logic if needed
+    return undefined;
+  };
+
+  const validateMessage = (value: string) => {
+    if (value.length < 3) {
+      return t("messageValidation.minLength");
+    }
+    if (value.length > 200) {
+      return t("messageValidation.maxLength");
+    }
+    // Add additional validation logic if needed
+    return undefined;
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { phone, title, message } = form;
@@ -139,16 +166,19 @@ export default function Navbar() {
                 title={"form.phone"}
                 placeholder={"form.examplePhone"}
                 onChange={(value) => setForm({ ...form, phone: value })}
+                validate={validatePhone}
               />
               <Input
                 title={"form.title"}
                 placeholder={"form.exampleTitle"}
                 onChange={(value) => setForm({ ...form, title: value })}
+                validate={validateTitle}
               />
               <TextArea
                 title={"form.message"}
                 placeholder={"form.exampleMessage"}
                 onChange={(value) => setForm({ ...form, message: value })}
+                validate={validateMessage}
               />
               <button type="submit" className="btn w-full">
                 {t("send")}
