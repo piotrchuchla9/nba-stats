@@ -44,10 +44,7 @@ export default function Navbar() {
   const [isMessageValid, setIsMessageValid] = useState(true);
 
   const validatePhone = (value: string) => {
-    if (value.length > 0 && (value.length < 9 || value.length > 20)) {
-      return t("phoneValidation.length");
-    }
-    if (value.length > 0 && !/^\+?[\d-]+$/g.test(value)) {
+    if (value.length > 0 && !/^\d{9,20}$/g.test(value)) {
       return t("phoneValidation.format");
     }
     return undefined;
@@ -87,7 +84,7 @@ export default function Navbar() {
         title
       )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A`;
       if (phone !== "") {
-        mailtoLink += `%0D%0A%0D%0A${t("form.myPhoneNumber")}: ${phone}`;
+        mailtoLink += `%0D%0A%0D%0A ${phone}`;
       }
       window.location.href = mailtoLink;
     }
