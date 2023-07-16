@@ -14,13 +14,13 @@ import { RootState } from "@/utils/redux/store";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../public/images/logo.png";
 import { Input } from "./input";
 import NavElement from "./nav-element";
 import { TextArea } from "./text-area";
-import { useState } from "react";
 
 interface FormProps {
   phone: string;
@@ -47,7 +47,7 @@ export default function Navbar() {
     if (value.length > 0 && (value.length < 9 || value.length > 20)) {
       return t("phoneValidation.length");
     }
-    if (value.length > 0 && !/^\+?\d[\d-]*$/g.test(value)) {
+    if (value.length > 0 && !/^\+?[\d-]+$/g.test(value)) {
       return t("phoneValidation.format");
     }
     return undefined;
@@ -83,11 +83,12 @@ export default function Navbar() {
 
     if (!phoneErrorMessage && !titleErrorMessage && !messageErrorMessage) {
       const { phone, title, message } = form;
-      const mailtoLink = `mailto:piotrchuchla9@gmail.com?subject=${encodeURIComponent(
+      let mailtoLink = `mailto:piotrchuchla9@gmail.com?subject=${encodeURIComponent(
         title
-      )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A${t(
-        `${t("form.myPhoneNumber")}`
-      )}: ${phone}`;
+      )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A`;
+      if (phone !== "") {
+        mailtoLink += `%0D%0A%0D%0A${t("form.myPhoneNumber")}: ${phone}`;
+      }
       window.location.href = mailtoLink;
     }
   };
