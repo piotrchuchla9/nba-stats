@@ -34,12 +34,14 @@ export default function Navbar() {
   const router = useRouter();
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.theme.theme);
-
   const [form, setForm] = useState<FormProps>({
     phone: "",
     title: "",
     message: "",
   });
+  const [isPhoneValid, setIsPhoneValid] = useState(true);
+  const [isTitleValid, setIsTitleValid] = useState(true);
+  const [isMessageValid, setIsMessageValid] = useState(true);
 
   const validatePhone = (value: string) => {
     if (value && value.length > 20) {
@@ -65,13 +67,27 @@ export default function Navbar() {
     return undefined;
   };
 
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { phone, title, message } = form;
-    const mailtoLink = `mailto:piotrchuchla9@gmail.com?subject=${encodeURIComponent(
-      title
-    )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A${t("myPhoneNumber")}: ${phone}`;
-    window.location.href = mailtoLink;
+
+    const phoneErrorMessage = validatePhone(form.phone);
+    const titleErrorMessage = validateTitle(form.title);
+    const messageErrorMessage = validateMessage(form.message);
+
+    setIsPhoneValid(!phoneErrorMessage);
+    setIsTitleValid(!titleErrorMessage);
+    setIsMessageValid(!messageErrorMessage);
+
+    if (!phoneErrorMessage && !titleErrorMessage && !messageErrorMessage) {
+      const { phone, title, message } = form;
+      const mailtoLink = `mailto:piotrchuchla9@gmail.com?subject=${encodeURIComponent(
+        title
+      )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A${t(
+        "form.myPhoneNumber"
+      )}: ${phone}`;
+      window.location.href = mailtoLink;
+    }
   };
 
   const changeLanguageToEn = () => {
@@ -164,18 +180,21 @@ export default function Navbar() {
                 placeholder={"form.examplePhone"}
                 onChange={(value) => setForm({ ...form, phone: value })}
                 validate={validatePhone}
+                error={!isPhoneValid}
               />
               <Input
                 title={"form.title"}
                 placeholder={"form.exampleTitle"}
                 onChange={(value) => setForm({ ...form, title: value })}
                 validate={validateTitle}
+                error={!isTitleValid}
               />
               <TextArea
                 title={"form.message"}
                 placeholder={"form.exampleMessage"}
                 onChange={(value) => setForm({ ...form, message: value })}
                 validate={validateMessage}
+                error={!isMessageValid}
               />
               <button type="submit" className="btn w-full">
                 {t("send")}
