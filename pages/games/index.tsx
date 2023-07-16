@@ -1,3 +1,3 @@
 export default function Games() {
-  return <p>Games</p>;
+  return <p className="bg-yellow-200">Games</p>;
 }

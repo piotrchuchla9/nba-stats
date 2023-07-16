@@ -4,6 +4,7 @@ import Head from "next/head";
 import favico from "../public/icons/favicon.ico";
 import "../styles/globals.css";
 import Navbar from "@/components/navbar";
+import PageTransition from "@/components/page-transition";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ function App({ Component, pageProps }: AppProps) {
               <Navbar />
             </div>
             <div className="flex-1 h-screen p-12 overflow-y-auto">
-              {<Component {...pageProps} />}
+              <PageTransition>{<Component {...pageProps} />}</PageTransition>
             </div>
           </div>
         </main>

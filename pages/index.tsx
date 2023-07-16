@@ -1,3 +1,3 @@
 export default function Index() {
-  return <p>Players</p>;
+  return <p className="bg-gray-100">Players</p>;
 }

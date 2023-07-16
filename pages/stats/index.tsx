@@ -1,3 +1,3 @@
 export default function Stats() {
-  return <p>Stats</p>;
+  return <p className="bg-blue-400">Stats</p>;
 }
