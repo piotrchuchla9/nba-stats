@@ -27,7 +27,7 @@ export default function NavElement(props: NavElementProps) {
 
   return (
     <div className={containerClasses}>
-      <Link href={`${i18n.language}/${link}`}>
+      <Link href={`${i18n.language}${link}`}>
         <div className={itemClasses}>
           <div className={twMerge("group-hover:text-blue-300")}>{icon}</div>
           <div className={twMerge("group-hover:text-blue-300", textClasses)}>

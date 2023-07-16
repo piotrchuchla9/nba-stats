@@ -1,5 +1,3 @@
-import Navbar from "@/components/navbar";
-import PageTransition from "@/components/page-transition";
 import i18n from "i18next";
 import Backend from "i18next-http-backend";
 import { appWithTranslation } from "next-i18next";
@@ -9,10 +7,13 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { initReactI18next } from "react-i18next";
+import { Provider } from "react-redux";
 import favico from "../public/icons/favicon.ico";
 import enTrans from "../public/locales/en/common.json";
 import plTrans from "../public/locales/pl/common.json";
 import "../styles/globals.css";
+import { store } from "../utils/redux/store";
+import Layout from "./layout";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -58,18 +59,15 @@ function App({ Component, pageProps }: AppProps) {
           content="upgrade-insecure-requests"
         />
       </Head>
-      <div className={montserrat.className}>
-        <main className="w-full overflow-hidden">
-          <div className="flex">
-            <div className="w-96 z-10">
-              <Navbar />
-            </div>
-            <div className="flex-1 h-screen p-12 overflow-y-auto relative">
-              <PageTransition>{<Component {...pageProps} />}</PageTransition>
-            </div>
-          </div>
-        </main>
-      </div>
+      <Provider store={store}>
+        <div className={montserrat.className}>
+          <main className="w-full overflow-hidden">
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </main>
+        </div>
+      </Provider>
     </>
   );
 }

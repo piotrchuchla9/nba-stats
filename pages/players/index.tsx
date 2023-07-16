@@ -4,5 +4,5 @@ import { useTranslation } from "react-i18next";
 export default function Index() {
   const { t } = useTranslation();
 
-  return <p>dashboard</p>;
+  return <Hero text={t("players")} desc={t("hero.playersDesc")} />;
 }

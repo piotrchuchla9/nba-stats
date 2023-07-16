@@ -5,4 +5,5 @@ export * from "./icon-poland";
 export * from "./icon-settings";
 export * from "./icon-stats";
 export * from "./icon-teams";
+export * from "./icon-theme";
 export * from "./icon-usa";

@@ -5,6 +5,13 @@
     "stats": "stats",
     "contact": "Contact Us",
     "settings": "Settings",
+    "theme": "Page theme",
+    "themeModalTitle": "Choose page theme:",
+    "themes": {
+        "light": "light",
+        "dark": "dark",
+        "purple": "purple"
+    },
     "hero": {
         "playersDesc": "Check it out player stats",
         "teamsDesc": "Check it out stats about teams",

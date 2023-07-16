@@ -5,6 +5,13 @@
     "stats": "statystyki",
     "contact": "Napisz do nas",
     "settings": "Ustawienia",
+    "theme": "Motyw strony",
+    "themeModalTitle": "Wybierz motyw strony:",
+    "themes": {
+        "light": "jasny",
+        "dark": "ciemny",
+        "purple": "fioletowy"
+    },
     "hero": {
         "playersDesc": "Sprawdź statystyki poszczególnych zawodników",
         "teamsDesc": "Sprawdź statystyki poszczególnych drużyn",
