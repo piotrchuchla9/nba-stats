@@ -9,14 +9,14 @@ import {
   IconTheme,
   IconUSA,
 } from "@/public/icons";
+import { setTheme } from "@/utils/redux/slices/themeSlice";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import logo from "../public/images/logo.png";
 import NavElement from "./nav-element";
-import { useSelector, useDispatch } from "react-redux";
-import { setTheme } from "@/utils/redux/slices/themeSlice";
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -72,7 +72,11 @@ export default function Navbar() {
       </div>
       <div className="h-full py-20 overflow-y-auto flex flex-col">
         <div className="flex-grow">
-          <NavElement icon={<IconPlayers />} link={"/players"} text={t("players")} />
+          <NavElement
+            icon={<IconPlayers />}
+            link={"/players"}
+            text={t("players")}
+          />
           <NavElement icon={<IconTeams />} link={"/teams"} text={t("teams")} />
           <NavElement icon={<IconGame />} link={"/games"} text={t("games")} />
           <NavElement icon={<IconStats />} link={"/stats"} text={t("stats")} />
@@ -131,14 +135,25 @@ export default function Navbar() {
                     <h3 className="font-bold text-lg text-center">
                       {t("themeModalTitle")}
                     </h3>
-                    <div data-theme={"light"} className="flex pt-10 pb-5 items-center justify-center gap-10">
-                      <button onClick={() => dispatch(setTheme("light"))} className="bg-slate-300 text-black px-2 py-1 border-2 rounded-lg border-slate-600">
+                    <div
+                      className="flex pt-10 pb-5 items-center justify-center gap-10"
+                    >
+                      <button
+                        onClick={() => dispatch(setTheme("light"))}
+                        className="bg-slate-300 text-black px-2 py-1 border-2 rounded-lg border-slate-600"
+                      >
                         {t("themes.light")}
                       </button>
-                      <button onClick={() => dispatch(setTheme("dark"))} className="bg-slate-600 text-slate-300 px-2 py-1 border-2 rounded-lg border-slate-300">
+                      <button
+                        onClick={() => dispatch(setTheme("dark"))}
+                        className="bg-slate-600 text-slate-300 px-2 py-1 border-2 rounded-lg border-slate-300"
+                      >
                         {t("themes.dark")}
                       </button>
-                      <button onClick={() => dispatch(setTheme("synthwave"))} className="bg-purple-600 text-slate-300 px-2 py-1 border-2 rounded-lg border-slate-300">
+                      <button
+                        onClick={() => dispatch(setTheme("synthwave"))}
+                        className="bg-purple-600 text-slate-300 px-2 py-1 border-2 rounded-lg border-slate-300"
+                      >
                         {t("themes.purple")}
                       </button>
                     </div>
