@@ -42,10 +42,9 @@ export default function Navbar() {
   });
 
   const validatePhone = (value: string) => {
-    if (value.length > 20) {
+    if (value && value.length > 20) {
       return t("phoneValidation.maxLength");
     }
-    // Add additional validation logic if needed
     return undefined;
   };
 
@@ -53,7 +52,6 @@ export default function Navbar() {
     if (value.length < 3) {
       return t("titleValidation.minLength");
     }
-    // Add additional validation logic if needed
     return undefined;
   };
 
@@ -64,7 +62,6 @@ export default function Navbar() {
     if (value.length > 200) {
       return t("messageValidation.maxLength");
     }
-    // Add additional validation logic if needed
     return undefined;
   };
 

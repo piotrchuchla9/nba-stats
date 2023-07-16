@@ -22,6 +22,7 @@ export function Input(props: InputProps) {
       const errorMessage = validate(value);
       if (errorMessage) {
         setIsValid(false);
+        return;
       }
     }
 

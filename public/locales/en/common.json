@@ -14,7 +14,7 @@
     },
     "mailHeader": "Contact Us!",
     "form": {
-        "phone": "Phone number",
+        "phone": "Phone number (optional)",
         "title": "Title",
         "message": "Your message",
         "examplePhone": "+48 654 244 232",

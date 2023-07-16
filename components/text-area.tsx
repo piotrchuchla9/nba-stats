@@ -22,6 +22,7 @@ export function TextArea(props: TextAreaProps) {
       const errorMessage = validate(value);
       if (errorMessage) {
         setIsValid(false);
+        return;
       }
     }
 
