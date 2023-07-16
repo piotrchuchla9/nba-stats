@@ -12,6 +12,19 @@
         "dark": "ciemny",
         "purple": "fioletowy"
     },
+    "mailHeader": "Napisz do nas!",
+    "form": {
+        "phone": "Numer telefonu",
+        "title": "Tytuł",
+        "message": "Twoja wiadomość",
+        "examplePhone": "+48 654 244 232",
+        "exampleTitle": "Czy aplikacja dostarcza dane na temat...",
+        "exampleMessage": "Napisz...",
+        "errorPhone": "Niepoprawny numer telefonu",
+        "errorTitle": "Niepoprawny tytuł",
+        "errorMessage": "Niepoprawna wiadomość",
+        "send": "Wyślij"
+    },
     "hero": {
         "playersDesc": "Sprawdź statystyki poszczególnych zawodników",
         "teamsDesc": "Sprawdź statystyki poszczególnych drużyn",

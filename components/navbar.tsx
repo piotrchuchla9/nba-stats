@@ -10,19 +10,45 @@ import {
   IconUSA,
 } from "@/public/icons";
 import { setTheme } from "@/utils/redux/slices/themeSlice";
+import { RootState } from "@/utils/redux/store";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import logo from "../public/images/logo.png";
+import { Input } from "./input";
 import NavElement from "./nav-element";
+import { TextArea } from "./text-area";
+import { useState } from "react";
+
+interface FormProps {
+  phone: string;
+  title: string;
+  message: string;
+}
 
 export default function Navbar() {
   const { t } = useTranslation();
   const { i18n } = useTranslation();
   const router = useRouter();
   const dispatch = useDispatch();
+  const theme = useSelector((state: RootState) => state.theme.theme);
+
+  const [form, setForm] = useState<FormProps>({
+    phone: "",
+    title: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { phone, title, message } = form;
+    const mailtoLink = `mailto:${phone}?subject=${encodeURIComponent(
+      title
+    )}&body=${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
+  };
 
   const changeLanguageToEn = () => {
     const { pathname, query, asPath } = router;
@@ -61,7 +87,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="p-12 pr-0 h-screen border-r-2 border-gray-600">
+    <div
+      className={`p-12 pr-0 h-screen border-r-2 ${
+        theme === "light" ? "border-gray-200" : "border-gray-600"
+      }`}
+    >
       <div className="flex">
         <Image width={32} src={logo} alt={"NBA Stats"} />
         <div className="flex items-center">
@@ -82,7 +112,11 @@ export default function Navbar() {
           <NavElement icon={<IconStats />} link={"/stats"} text={t("stats")} />
         </div>
         <div className="mt-auto flex flex-col gap-4">
-          <button className="text-xl" onClick={() => console.log("modal")}>
+          <button
+            className="text-xl"
+            // @ts-ignore
+            onClick={() => window.mail_modal.showModal()}
+          >
             <div className="flex gap-4 group/item">
               <div className="group-hover/item:text-blue-300">
                 <IconMail />
@@ -92,6 +126,35 @@ export default function Navbar() {
               </div>
             </div>
           </button>
+          <dialog id="mail_modal" className="modal">
+            <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
+              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                ✕
+              </button>
+              <h3 className="font-bold text-lg"></h3>
+              <p className="py-4 text-2xl text-center font-semibold">
+                {t("mailHeader")}
+              </p>
+              <Input
+                title={"form.phone"}
+                placeholder={"form.examplePhone"}
+                onChange={(value) => setForm({ ...form, phone: value })}
+              />
+              <Input
+                title={"form.title"}
+                placeholder={"form.exampleTitle"}
+                onChange={(value) => setForm({ ...form, title: value })}
+              />
+              <TextArea
+                title={"form.message"}
+                placeholder={"form.exampleMessage"}
+                onChange={(value) => setForm({ ...form, message: value })}
+              />
+              <button type="submit" className="btn w-full">
+                {t("send")}
+              </button>
+            </form>
+          </dialog>
           <details className="dropdown">
             <summary className="btn m-0 p-0 bg-inherit border-0 hover:bg-inherit">
               <div className="flex gap-4">
@@ -135,9 +198,7 @@ export default function Navbar() {
                     <h3 className="font-bold text-lg text-center">
                       {t("themeModalTitle")}
                     </h3>
-                    <div
-                      className="flex pt-10 pb-5 items-center justify-center gap-10"
-                    >
+                    <div className="flex pt-10 pb-5 items-center justify-center gap-10">
                       <button
                         onClick={() => dispatch(setTheme("light"))}
                         className="bg-slate-300 text-black px-2 py-1 border-2 rounded-lg border-slate-600"

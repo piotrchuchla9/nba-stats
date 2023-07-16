@@ -14,7 +14,7 @@ export function IconUSA() {
         strokeLinejoin="round"
       ></g>
       <g id="SVGRepo_iconCarrier">
-        <g clip-path="url(#clip0_503_3486)">
+        <g clipPath="url(#clip0_503_3486)">
           <rect width="28" height="20" rx="2" fill="white"></rect>
           <mask
             id="mask0_503_3486"
@@ -28,8 +28,8 @@ export function IconUSA() {
           </mask>
           <g mask="url(#mask0_503_3486)">
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M28 0H0V1.33333H28V0ZM28 2.66667H0V4H28V2.66667ZM0 5.33333H28V6.66667H0V5.33333ZM28 8H0V9.33333H28V8ZM0 10.6667H28V12H0V10.6667ZM28 13.3333H0V14.6667H28V13.3333ZM0 16H28V17.3333H0V16ZM28 18.6667H0V20H28V18.6667Z"
               fill="#D02F44"
             ></path>
@@ -86,7 +86,7 @@ export function IconUSA() {
             y2="7.99999"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="white"></stop>
+            <stop stopColor="white"></stop>
             <stop offset="1" stopColor="#F0F0F0"></stop>
           </linearGradient>
           <clipPath id="clip0_503_3486">
