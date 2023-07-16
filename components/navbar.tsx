@@ -44,10 +44,7 @@ export default function Navbar() {
   const [isMessageValid, setIsMessageValid] = useState(true);
 
   const validatePhone = (value: string) => {
-    if (
-      value.length > 0 &&
-      !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(value)
-    ) {
+    if (value.length > 8 && typeof value === "number") {
       return t("phoneValidation.format");
     }
     return undefined;
