@@ -23,7 +23,6 @@ import NavElement from "./nav-element";
 import { TextArea } from "./text-area";
 
 interface FormProps {
-  phone: string;
   title: string;
   message: string;
 }
@@ -35,20 +34,11 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.theme.theme);
   const [form, setForm] = useState<FormProps>({
-    phone: "",
     title: "",
     message: "",
   });
-  const [isPhoneValid, setIsPhoneValid] = useState(true);
   const [isTitleValid, setIsTitleValid] = useState(true);
   const [isMessageValid, setIsMessageValid] = useState(true);
-
-  const validatePhone = (value: string) => {
-    if (value.length > 8 && typeof value === "number") {
-      return t("phoneValidation.format");
-    }
-    return undefined;
-  };
 
   const validateTitle = (value: string) => {
     if (value.length < 3) {
@@ -70,22 +60,17 @@ export default function Navbar() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const phoneErrorMessage = validatePhone(form.phone);
     const titleErrorMessage = validateTitle(form.title);
     const messageErrorMessage = validateMessage(form.message);
 
-    setIsPhoneValid(!phoneErrorMessage);
     setIsTitleValid(!titleErrorMessage);
     setIsMessageValid(!messageErrorMessage);
 
-    if (!phoneErrorMessage && !titleErrorMessage && !messageErrorMessage) {
-      const { phone, title, message } = form;
+    if (!titleErrorMessage && !messageErrorMessage) {
+      const { title, message } = form;
       let mailtoLink = `mailto:piotrchuchla9@gmail.com?subject=${encodeURIComponent(
         title
       )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A`;
-      if (phone !== "") {
-        mailtoLink += `%0D%0A%0D%0A ${phone}`;
-      }
       window.location.href = mailtoLink;
     }
   };
@@ -175,14 +160,6 @@ export default function Navbar() {
               <p className="py-4 text-2xl text-center font-semibold">
                 {t("mailHeader")}
               </p>
-              <Input
-                title={"form.phone"}
-                placeholder={"form.examplePhone"}
-                onChange={(value) => setForm({ ...form, phone: value })}
-                validate={validatePhone}
-                error={!isPhoneValid}
-                errorMessage={"form.errorPhone"}
-              />
               <Input
                 title={"form.title"}
                 placeholder={"form.exampleTitle"}
