@@ -71,9 +71,9 @@ export default function Navbar() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { phone, title, message } = form;
-    const mailtoLink = `mailto:${phone}?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:piotrchuchla9@gmail.com?subject=${encodeURIComponent(
       title
-    )}&body=${encodeURIComponent(message)}`;
+    )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A${t("myPhoneNumber")}: ${phone}`;
     window.location.href = mailtoLink;
   };
 

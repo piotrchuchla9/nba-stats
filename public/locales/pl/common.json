@@ -23,7 +23,8 @@
         "errorPhone": "Niepoprawny numer telefonu",
         "errorTitle": "Niepoprawny tytuł",
         "errorMessage": "Niepoprawna wiadomość",
-        "send": "Wyślij"
+        "send": "Wyślij",
+        "myPhoneNumber:": "Mój numer telefonu"
     },
     "hero": {
         "playersDesc": "Sprawdź statystyki poszczególnych zawodników",

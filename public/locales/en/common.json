@@ -23,7 +23,8 @@
         "errorPhone": "Incorrect phone number",
         "errorTitle": "Incorrect title",
         "errorMessage": "Incorrect message",
-        "send": "Send"
+        "send": "Send",
+        "myPhoneNumber:": "My phone number"
     },
     "hero": {
         "playersDesc": "Check it out player stats",
