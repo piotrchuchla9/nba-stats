@@ -1,0 +1,14 @@
+{
+    "players": "zawodnicy",
+    "teams": "drużyny",
+    "games": "mecze",
+    "stats": "statystyki",
+    "contact": "Napisz do nas",
+    "settings": "Ustawienia",
+    "hero": {
+        "playersDesc": "Sprawdź statystyki poszczególnych zawodników",
+        "teamsDesc": "Sprawdź statystyki poszczególnych drużyn",
+        "gamesDesc": "Sprawdź statystyki w poszczególnych meczach",
+        "statsDesc": "Sprawdź zaawansowane statystyki"
+    }
+}

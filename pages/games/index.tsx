@@ -1,5 +1,8 @@
 import Hero from "@/components/hero";
+import { useTranslation } from "react-i18next";
 
 export default function Games() {
-  return <Hero text={"GAMES"} desc={"Check it out stats about games"} />;
+  const { t } = useTranslation();
+
+  return <Hero text={t("games")} desc={t("hero.gamesDesc")} />;
 }

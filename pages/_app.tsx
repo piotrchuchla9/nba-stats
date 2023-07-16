@@ -1,14 +1,53 @@
+import Navbar from "@/components/navbar";
+import PageTransition from "@/components/page-transition";
+import i18n from "i18next";
+import Backend from "i18next-http-backend";
+import { appWithTranslation } from "next-i18next";
 import { AppProps } from "next/app";
 import { Montserrat } from "next/font/google";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { initReactI18next } from "react-i18next";
 import favico from "../public/icons/favicon.ico";
+import enTrans from "../public/locales/en/common.json";
+import plTrans from "../public/locales/pl/common.json";
 import "../styles/globals.css";
-import Navbar from "@/components/navbar";
-import PageTransition from "@/components/page-transition";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+const translations = {
+  pl: {
+    common: plTrans,
+  },
+  en: {
+    common: enTrans,
+  },
+};
+
+i18n
+  .use(Backend)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: "en",
+    ns: ["common"],
+    defaultNS: "common",
+    interpolation: {
+      escapeValue: false,
+    },
+    resources: translations,
+  });
+
 function App({ Component, pageProps }: AppProps) {
+  const { locale, asPath, push } = useRouter();
+
+  useEffect(() => {
+    if (!asPath.includes(`/${locale}`)) {
+      const redirectPath = `/${locale}${asPath === "/" ? "" : asPath}`;
+      push(redirectPath);
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -35,4 +74,4 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 
-export default App;
+export default appWithTranslation(App);

@@ -1,0 +1,14 @@
+{
+    "players": "players",
+    "teams": "teams",
+    "games": "games",
+    "stats": "stats",
+    "contact": "Contact Us",
+    "settings": "Settings",
+    "hero": {
+        "playersDesc": "Check it out player stats",
+        "teamsDesc": "Check it out stats about teams",
+        "gamesDesc": "Check it out stats about games",
+        "statsDesc": "Check it out the deep specific stats"
+    }
+}

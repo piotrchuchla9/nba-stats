@@ -1,5 +1,8 @@
 import Hero from "@/components/hero";
+import { useTranslation } from "react-i18next";
 
 export default function Stats() {
-  return <Hero text={"STATS"} desc={"Check it out the deep specific stats"} />;
+  const { t } = useTranslation();
+
+  return <Hero text={t("stats")} desc={t("hero.statsDesc")} />;
 }

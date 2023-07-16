@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 
 interface NavElementProps {
@@ -10,6 +11,8 @@ interface NavElementProps {
 }
 
 export default function NavElement(props: NavElementProps) {
+  const { i18n } = useTranslation();
+
   const { icon, link, text } = props;
   const router = useRouter();
   const isActive = router.pathname === link;
@@ -24,11 +27,11 @@ export default function NavElement(props: NavElementProps) {
 
   return (
     <div className={containerClasses}>
-      <Link href={link}>
+      <Link href={`${i18n.language}/${link}`}>
         <div className={itemClasses}>
           <div className={twMerge("group-hover:text-blue-300")}>{icon}</div>
           <div className={twMerge("group-hover:text-blue-300", textClasses)}>
-            <span>{text}</span>
+            <span className="capitalize">{text}</span>
           </div>
         </div>
       </Link>
