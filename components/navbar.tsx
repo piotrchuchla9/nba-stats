@@ -1,9 +1,12 @@
 import {
-    IconGame,
-    IconMail,
-    IconPlayers,
-    IconStats,
-    IconTeams,
+  IconGame,
+  IconMail,
+  IconPlayers,
+  IconPoland,
+  IconSettings,
+  IconStats,
+  IconTeams,
+  IconUSA,
 } from "@/public/icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +31,7 @@ export default function Navbar() {
           <NavElement icon={<IconGame />} link={"/games"} text={"Games"} />
           <NavElement icon={<IconStats />} link={"/stats"} text={"Stats"} />
         </div>
-        <div className="mt-auto">
+        <div className="mt-auto flex flex-col gap-4">
           <button className="text-xl" onClick={() => console.log("modal")}>
             <div className="flex gap-4 group/item">
               <div className="group-hover/item:text-blue-300">
@@ -37,6 +40,30 @@ export default function Navbar() {
               <div className="group-hover/item:text-blue-300">Contact Us</div>
             </div>
           </button>
+          <details className="dropdown">
+            <summary className="btn m-0 p-0 bg-inherit border-0 hover:bg-inherit">
+              <div className="flex gap-4">
+                <div>
+                  <IconSettings />
+                </div>
+                <div>
+                  <span className="text-xl capitalize font-normal">
+                    Settings
+                  </span>
+                </div>
+              </div>
+            </summary>
+            <div className="shadow menu dropdown-content z-[1] bg-inherit">
+              <div className="flex gap-7">
+                <button>
+                  <IconPoland />
+                </button>
+                <button>
+                  <IconUSA />
+                </button>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </div>
