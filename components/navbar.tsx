@@ -44,8 +44,11 @@ export default function Navbar() {
   const [isMessageValid, setIsMessageValid] = useState(true);
 
   const validatePhone = (value: string) => {
-    if (value && value.length > 20) {
-      return t("phoneValidation.maxLength");
+    if (value.length > 0 && (value.length < 9 || value.length > 20)) {
+      return t("phoneValidation.length");
+    }
+    if (value.length > 0 && !/^\+?\d[\d-]*$/g.test(value)) {
+      return t("phoneValidation.format");
     }
     return undefined;
   };
@@ -67,7 +70,6 @@ export default function Navbar() {
     return undefined;
   };
 
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -84,7 +86,7 @@ export default function Navbar() {
       const mailtoLink = `mailto:piotrchuchla9@gmail.com?subject=${encodeURIComponent(
         title
       )}&body=${encodeURIComponent(message)}%0D%0A%0D%0A${t(
-        "form.myPhoneNumber"
+        `${t("form.myPhoneNumber")}`
       )}: ${phone}`;
       window.location.href = mailtoLink;
     }
