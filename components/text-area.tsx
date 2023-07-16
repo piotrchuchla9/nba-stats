@@ -5,13 +5,14 @@ interface TextAreaProps {
   title: string;
   placeholder: string;
   error?: boolean;
+  errorMessage: string;
   onChange?: (value: string) => void;
   validate?: (value: string) => string | undefined;
 }
 
 export function TextArea(props: TextAreaProps) {
   const { t } = useTranslation();
-  const { title, placeholder, error, onChange, validate } = props;
+  const { title, placeholder, error, errorMessage, onChange, validate } = props;
   const [isValid, setIsValid] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -43,7 +44,7 @@ export function TextArea(props: TextAreaProps) {
       ></textarea>
       <label className="label">
         <span className="label-text-alt">{error && !isValid && (
-        <span className="text-red-500">error</span>
+        <span className="text-red-500">{t(errorMessage)}</span>
       )}</span>
       </label>
     </div>

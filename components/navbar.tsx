@@ -44,7 +44,10 @@ export default function Navbar() {
   const [isMessageValid, setIsMessageValid] = useState(true);
 
   const validatePhone = (value: string) => {
-    if (value.length > 0 && !/^\d{9,20}$/g.test(value)) {
+    if (
+      value.length > 0 &&
+      !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(value)
+    ) {
       return t("phoneValidation.format");
     }
     return undefined;
@@ -181,6 +184,7 @@ export default function Navbar() {
                 onChange={(value) => setForm({ ...form, phone: value })}
                 validate={validatePhone}
                 error={!isPhoneValid}
+                errorMessage={"form.errorPhone"}
               />
               <Input
                 title={"form.title"}
@@ -188,6 +192,7 @@ export default function Navbar() {
                 onChange={(value) => setForm({ ...form, title: value })}
                 validate={validateTitle}
                 error={!isTitleValid}
+                errorMessage={"form.errorTitle"}
               />
               <TextArea
                 title={"form.message"}
@@ -195,6 +200,7 @@ export default function Navbar() {
                 onChange={(value) => setForm({ ...form, message: value })}
                 validate={validateMessage}
                 error={!isMessageValid}
+                errorMessage={"form.errorMessage"}
               />
               <button type="submit" className="btn w-full">
                 {t("send")}
