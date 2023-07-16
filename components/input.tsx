@@ -40,13 +40,15 @@ export function Input(props: InputProps) {
       <input
         type="text"
         placeholder={t(placeholder)}
-        className="input input-bordered w-full placeholder:text-red-200"
+        className="input input-bordered w-full placeholder:text-slate-700"
         onChange={handleChange}
       />
       <label className="label">
-        <span className="label-text-alt">{error && !isValid && (
-        <span className="text-red-500">{t(errorMessage)}</span>
-      )}</span>
+        <span className="label-text-alt">
+          {error && !isValid && (
+            <span className="text-red-500">{t(errorMessage)}</span>
+          )}
+        </span>
       </label>
     </div>
   );

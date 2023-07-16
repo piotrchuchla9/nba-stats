@@ -38,14 +38,16 @@ export function TextArea(props: TextAreaProps) {
         <span className="label-text font-semibold">{t(title)}</span>
       </label>
       <textarea
-        className="textarea textarea-bordered h-24"
+        className="textarea textarea-bordered h-24 placeholder:text-slate-700"
         placeholder={t(placeholder)}
         onChange={handleChange}
       ></textarea>
       <label className="label">
-        <span className="label-text-alt">{error && !isValid && (
-        <span className="text-red-500">{t(errorMessage)}</span>
-      )}</span>
+        <span className="label-text-alt">
+          {error && !isValid && (
+            <span className="text-red-500">{t(errorMessage)}</span>
+          )}
+        </span>
       </label>
     </div>
   );
