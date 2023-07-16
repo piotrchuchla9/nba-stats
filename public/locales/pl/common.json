@@ -14,17 +14,13 @@
     },
     "mailHeader": "Napisz do nas!",
     "form": {
-        "phone": "Numer telefonu (opcjonalnie)",
         "title": "Tytuł",
-        "message": "Twoja wiadomość",
-        "examplePhone": "+48 654 244 232",
+        "message": "Twoja wiadomość (do 150 znaków)",
         "exampleTitle": "Czy aplikacja dostarcza dane na temat...",
         "exampleMessage": "Napisz...",
-        "errorPhone": "Niepoprawny numer telefonu",
         "errorTitle": "Niepoprawny tytuł",
         "errorMessage": "Niepoprawna wiadomość",
-        "send": "Wyślij",
-        "myPhoneNumber:": "Mój numer telefonu"
+        "send": "Wyślij"
     },
     "hero": {
         "playersDesc": "Sprawdź statystyki poszczególnych zawodników",
