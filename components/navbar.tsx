@@ -217,6 +217,36 @@ export default function Navbar() {
                 </button>
                 <dialog id="theme_modal" className="modal">
                   <form method="dialog" className="modal-box">
+                    <h3 className="font-bold text-lg text-center">
+                      {t("themeModalTitle")}
+                    </h3>
+                    <div className="flex pt-10 pb-5 items-center justify-center gap-10">
+                      <button
+                        onClick={() => dispatch(setTheme("light"))}
+                        className="bg-slate-300 text-black px-2 py-1 border-2 rounded-lg border-slate-600"
+                      >
+                        {t("themes.light")}
+                      </button>
+                      <button
+                        onClick={() => dispatch(setTheme("dark"))}
+                        className="bg-slate-600 text-slate-300 px-2 py-1 border-2 rounded-lg border-slate-300"
+                      >
+                        {t("themes.dark")}
+                      </button>
+                      <button
+                        onClick={() => dispatch(setTheme("synthwave"))}
+                        className="bg-purple-600 text-slate-300 px-2 py-1 border-2 rounded-lg border-slate-300"
+                      >
+                        {t("themes.purple")}
+                      </button>
+                    </div>
+                  </form>
+                  <form method="dialog" className="modal-backdrop">
+                    <button>close</button>
+                  </form>
+                </dialog>
+                {/* <dialog id="theme_modal" className="modal">
+                  <form method="dialog" className="modal-box">
                     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                       ✕
                     </button>
@@ -244,7 +274,7 @@ export default function Navbar() {
                       </button>
                     </div>
                   </form>
-                </dialog>
+                </dialog> */}
               </div>
             </div>
           </details>
