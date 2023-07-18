@@ -7,6 +7,7 @@
     "settings": "Ustawienia",
     "theme": "Motyw strony",
     "themeModalTitle": "Wybierz motyw strony:",
+    "close": "zamknij",
     "themes": {
         "light": "jasny",
         "dark": "ciemny",
@@ -27,5 +28,13 @@
         "teamsDesc": "Sprawdź statystyki poszczególnych drużyn",
         "gamesDesc": "Sprawdź statystyki w poszczególnych meczach",
         "statsDesc": "Sprawdź zaawansowane statystyki"
-    }
+    },
+    "first_name": "Imie",
+    "last_name": "Nazwisko",
+    "position": "Pozycja",
+    "team": "Drużyna",
+    "height_feet": "W - stopy",
+    "height_inches": "W - cm",
+    "weight_pounds": "W - funty",
+    "weight_kilograms": "W - kg"
 }

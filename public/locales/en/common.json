@@ -7,6 +7,7 @@
     "settings": "Settings",
     "theme": "Page theme",
     "themeModalTitle": "Choose page theme:",
+    "close": "close",
     "themes": {
         "light": "light",
         "dark": "dark",
@@ -27,5 +28,13 @@
         "teamsDesc": "Check it out stats about teams",
         "gamesDesc": "Check it out stats about games",
         "statsDesc": "Check it out the deep specific stats"
-    }
+    },
+    "first_name": "Name",
+    "last_name": "Surename",
+    "position": "Position",
+    "team": "Team",
+    "height_feet": "H - Feets",
+    "height_inches": "H - cm",
+    "weight_pounds": "W - pounds",
+    "weight_kilograms": "W - kg"
 }
