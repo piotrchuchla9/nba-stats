@@ -64,26 +64,6 @@ function TableDataCell<TData>(cell: Cell<TData, unknown>) {
   );
 }
 
-function CustomTableRow() {
-  return (
-    <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
-      <div className="animate-pulse flex space-x-4">
-        <div className="rounded-full bg-slate-700 h-10 w-10"></div>
-        <div className="flex-1 space-y-6 py-1">
-          <div className="h-2 bg-slate-700 rounded"></div>
-          <div className="space-y-3">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-700 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-700 rounded col-span-1"></div>
-            </div>
-            <div className="h-2 bg-slate-700 rounded"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function TableBodyRow<TData>(row: Row<TData>) {
   const isEven = row.index % 2 === 0;
   const rowClassName = isEven ? null : "bg-slate-800 odd-row";
@@ -128,7 +108,7 @@ export function Table<TData>({
       {isLoading ? (
         <TableLoader />
       ) : (
-        <table className="w-[100%]">
+        <table className="w-[100%] border-b-2">
           <thead className="border-b-2 border-gray-400">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableHeaderRow key={headerGroup.id} {...headerGroup} />

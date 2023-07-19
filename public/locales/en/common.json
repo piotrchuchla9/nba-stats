@@ -42,5 +42,13 @@
     "conference": "Conferrence",
     "division": "Division",
     "abbreviation": "Abbreviation",
-    "name": "Name"
+    "name": "Name",
+    "home_team": "Home",
+    "visitor_team": "Visitor",
+    "home_team_score": "Home Score",
+    "visitor_team_score": "Visitor Score",
+    "date": "Date",
+    "status": "Status",
+    "peroid": "Quarters",
+    "season": "Season"
 }

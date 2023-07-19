@@ -42,5 +42,13 @@
     "conference": "Konferencja",
     "division": "Dywizja",
     "abbreviation": "Skrót",
-    "name": "Nazwa"
+    "name": "Nazwa",
+    "home_team": "Gospodarz",
+    "visitor_team": "Gość",
+    "home_team_score": "Punkty Gospodarza",
+    "visitor_team_score": "Punkty Gościa",
+    "date": "Data",
+    "status": "Status",
+    "peroid": "Kwarty",
+    "season": "Sezon"
 }

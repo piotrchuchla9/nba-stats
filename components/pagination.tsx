@@ -19,6 +19,14 @@ export default function Pagination({
     return setPage(page - 1);
   };
 
+  const handleInputChange = (e: { target: { value: any } }) => {
+    const inputValue = e.target.value;
+
+    if (!isNaN(inputValue)) {
+      setPage(Number(inputValue));
+    }
+  };
+
   return (
     <div className="flex justify-end py-10">
       <div className="join">
@@ -28,14 +36,19 @@ export default function Pagination({
         <button className="join-item btn" onClick={() => setPage(1)}>
           1
         </button>
-        <button className="join-item btn btn-disabled">{page}</button>
+        <input
+          type="number"
+          placeholder={page.toString()}
+          className="input text-center input-bordered w-20 max-w-xs mx-1"
+          onChange={handleInputChange}
+        />
         <button
           className="join-item btn"
           onClick={() => {
-            setPage(206);
+            setPage(maxPage);
           }}
         >
-          206
+          {maxPage}
         </button>
         <button className="btn" onClick={increasePage}>
           {">"}

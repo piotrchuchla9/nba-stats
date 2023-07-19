@@ -7,6 +7,11 @@ const columnHelper = createColumnHelper<Player>();
 const Columns = () => {
 
   const columns = [
+    columnHelper.accessor((row) => row.id, {
+      id: "id",
+      cell: (info) => info.getValue(),
+      header: "ID",
+    }),
     columnHelper.accessor((row) => row.first_name, {
       id: "first_name",
       cell: (info) => info.getValue(),
