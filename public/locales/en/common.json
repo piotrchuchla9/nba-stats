@@ -36,5 +36,11 @@
     "height_feet": "H - Feets",
     "height_inches": "H - cm",
     "weight_pounds": "W - pounds",
-    "weight_kilograms": "W - kg"
+    "weight_kilograms": "W - kg",
+    "full_team_name": "Team Name",
+    "city": "City",
+    "conference": "Conferrence",
+    "division": "Division",
+    "abbreviation": "Abbreviation",
+    "name": "Name"
 }

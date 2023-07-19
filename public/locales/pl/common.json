@@ -36,5 +36,11 @@
     "height_feet": "W - stopy",
     "height_inches": "W - cm",
     "weight_pounds": "W - funty",
-    "weight_kilograms": "W - kg"
+    "weight_kilograms": "W - kg",
+    "full_team_name": "Nazwa drużyny",
+    "city": "Miasto",
+    "conference": "Konferencja",
+    "division": "Dywizja",
+    "abbreviation": "Skrót",
+    "name": "Nazwa"
 }

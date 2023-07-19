@@ -32,5 +32,3 @@ function useAllPlayers(page: number) {
 }
 
 export default useAllPlayers;
-
-// page=206

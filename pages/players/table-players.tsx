@@ -1,12 +1,10 @@
 import { Table } from "@/components/table";
 import { Player } from "@/utils/types";
 import { createColumnHelper } from "@tanstack/react-table";
-import { useTranslation } from "react-i18next";
 
 const columnHelper = createColumnHelper<Player>();
 
 const Columns = () => {
-  const { t } = useTranslation("labs");
 
   const columns = [
     columnHelper.accessor((row) => row.first_name, {
