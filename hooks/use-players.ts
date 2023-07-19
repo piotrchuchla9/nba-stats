@@ -1,7 +1,7 @@
 import { Meta, Player } from '@/utils/types';
 import { useEffect, useState } from 'react';
 
-function useAllPlayers(page: number) {
+function useAllPlayers(page: number, perPage?: number) {
     const [data, setData] = useState<Player[] | null>(null);
     const [meta, setMeta] = useState<Meta | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -11,7 +11,7 @@ function useAllPlayers(page: number) {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `https://www.balldontlie.io/api/v1/players?page=${page}`
+                    `https://www.balldontlie.io/api/v1/players?page=${page}&per_page=${perPage}`
                 );
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -28,7 +28,7 @@ function useAllPlayers(page: number) {
         };
 
         fetchData();
-    }, [page]);
+    }, [page, perPage]);
 
     return { data, isLoading, isError, meta };
 }

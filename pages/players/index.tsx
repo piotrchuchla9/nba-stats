@@ -8,7 +8,8 @@ import Pagination from "@/components/pagination";
 export default function Index() {
   const { t } = useTranslation();
   const [page, setPage] = useState<number>(1);
-  const { data: allPlayers, isLoading, meta } = useAllPlayers(page);
+  const [perPage, setPerPage] = useState<number>(25);
+  const { data: allPlayers, isLoading, meta } = useAllPlayers(page, perPage);
 
   return (
     <>
@@ -18,6 +19,8 @@ export default function Index() {
           page={meta.current_page}
           setPage={setPage}
           maxPage={meta.total_pages}
+          perPage={perPage}
+          itemsPerPage={setPerPage}
         />
       )}
       {allPlayers && (
@@ -28,6 +31,8 @@ export default function Index() {
           page={meta.current_page}
           setPage={setPage}
           maxPage={meta.total_pages}
+          perPage={perPage}
+          itemsPerPage={setPerPage}
         />
       )}
     </>

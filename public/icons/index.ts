@@ -8,3 +8,5 @@ export * from "./icon-stats";
 export * from "./icon-teams";
 export * from "./icon-theme";
 export * from "./icon-usa";
+export * from "./icon-win";
+

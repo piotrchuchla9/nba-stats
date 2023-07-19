@@ -13,12 +13,32 @@ const Columns = () => {
     }),
     columnHelper.accessor((row) => row.home_team.abbreviation, {
       id: "home_team",
-      cell: (info) => info.getValue(),
+      cell: (info) =>
+        info.row.original.home_team_score >
+        info.row.original.visitor_team_score ? (
+          <div className="text-green-700">
+            <div>
+              <p>{info.getValue()}</p>
+            </div>
+          </div>
+        ) : (
+          <span className="text-red-400">{info.getValue()}</span>
+        ),
       header: "home_team",
     }),
     columnHelper.accessor((row) => row.visitor_team.abbreviation, {
       id: "visitor_team",
-      cell: (info) => info.getValue(),
+      cell: (info) =>
+        info.row.original.home_team_score <
+        info.row.original.visitor_team_score ? (
+          <div className="text-green-700">
+            <div>
+              <p>{info.getValue()}</p>
+            </div>
+          </div>
+        ) : (
+          <span className="text-red-400">{info.getValue()}</span>
+        ),
       header: "visitor_team",
     }),
     columnHelper.accessor((row) => row.home_team_score, {

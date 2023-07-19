@@ -8,7 +8,8 @@ import Pagination from "@/components/pagination";
 export default function Games() {
   const { t } = useTranslation();
   const [page, setPage] = useState<number>(1);
-  const { data: games, isLoading, meta } = useAllGames(page);
+  const [perPage, setPerPage] = useState<number>(25);
+  const { data: games, isLoading, meta } = useAllGames(page, perPage);
 
   return (
     <>
@@ -18,6 +19,8 @@ export default function Games() {
           page={meta.current_page}
           setPage={setPage}
           maxPage={meta.total_pages}
+          perPage={perPage}
+          itemsPerPage={setPerPage}
         />
       )}
       {games && meta && <TableGames games={games} isLoading={isLoading} />}
@@ -25,6 +28,8 @@ export default function Games() {
         <Pagination
           page={meta.current_page}
           setPage={setPage}
+          perPage={perPage}
+          itemsPerPage={setPerPage}
           maxPage={meta.total_pages}
         />
       )}
