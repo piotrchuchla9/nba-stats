@@ -1,4 +1,5 @@
 import { IconSort } from "@/public/icons";
+import { RootState } from "@/utils/redux/store";
 import {
   Cell,
   flexRender,
@@ -12,6 +13,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import TableLoader from "./table-loader";
 
@@ -66,13 +68,24 @@ function TableDataCell<TData>(cell: Cell<TData, unknown>) {
 
 function TableBodyRow<TData>(row: Row<TData>) {
   const isEven = row.index % 2 === 0;
-  const rowClassName = isEven ? null : "bg-slate-800 odd-row";
+  const theme = useSelector((state: RootState) => state.theme.theme);
+  const rowClassName = isEven
+    ? null
+    : theme === "light"
+    ? "bg-slate-300 odd-row"
+    : "bg-slate-800 odd-row";
 
   return (
     <tr
       className={twMerge(
         rowClassName,
-        "bg-opacity-70 hover:bg-opacity-100 hover:text-white"
+        `bg-opacity-70 hover:bg-opacity-100  ${
+          theme === "light"
+            ? "hover:text-white hover:bg-slate-400"
+            : theme === "synthwave"
+            ? "hover:text-purple-300"
+            : "hover:text-white"
+        }`
       )}
     >
       {row.getVisibleCells().map((cell) => (

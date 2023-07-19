@@ -1,8 +1,9 @@
-import { Player } from '@/utils/types';
+import { Meta, Player } from '@/utils/types';
 import { useEffect, useState } from 'react';
 
 function useAllPlayers(page: number) {
     const [data, setData] = useState<Player[] | null>(null);
+    const [meta, setMeta] = useState<Meta | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isError, setIsError] = useState<boolean>(false);
 
@@ -16,6 +17,7 @@ function useAllPlayers(page: number) {
                     throw new Error('Network response was not ok');
                 }
                 const jsonData = await response.json();
+                setMeta(jsonData.meta);
                 setData(jsonData.data);
                 setIsLoading(false);
             } catch (error) {
@@ -28,7 +30,7 @@ function useAllPlayers(page: number) {
         fetchData();
     }, [page]);
 
-    return { data, isLoading, isError };
+    return { data, isLoading, isError, meta };
 }
 
 export default useAllPlayers;
