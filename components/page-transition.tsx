@@ -33,7 +33,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
         transition={{
           duration: 0.3,
         }}
-        style={{ position: "absolute", width: "89%", height: "90%", zIndex: 0 }}
+        style={{ position: "absolute", width: "95%", height: "90%", zIndex: 0 }}
       >
         {children}
       </motion.div>

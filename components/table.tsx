@@ -128,8 +128,8 @@ export function Table<TData>({
       {isLoading ? (
         <TableLoader />
       ) : (
-        <table>
-          <thead className="border-b-2 border-gray-400 w-full">
+        <table className="w-[100%]">
+          <thead className="border-b-2 border-gray-400">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableHeaderRow key={headerGroup.id} {...headerGroup} />
             ))}

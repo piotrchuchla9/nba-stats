@@ -1,7 +1,7 @@
 import { Player } from '@/utils/types';
 import { useEffect, useState } from 'react';
 
-function useAllPlayers() {
+function useAllPlayers(page: number) {
     const [data, setData] = useState<Player[] | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isError, setIsError] = useState<boolean>(false);
@@ -10,7 +10,7 @@ function useAllPlayers() {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    'https://www.balldontlie.io/api/v1/players?page=1'
+                    `https://www.balldontlie.io/api/v1/players?page=${page}`
                 );
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -26,9 +26,11 @@ function useAllPlayers() {
         };
 
         fetchData();
-    }, []);
+    }, [page]);
 
     return { data, isLoading, isError };
 }
 
 export default useAllPlayers;
+
+// page=206
