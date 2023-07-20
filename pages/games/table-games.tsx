@@ -82,6 +82,10 @@ interface TableGamesProps {
 }
 
 const TableGames: React.FC<TableGamesProps> = ({ games, isLoading }) => {
+  if (games.length === 0) {
+    return <div>No games available.</div>;
+  }
+
   const columns = Columns();
   return <Table data={games} columns={columns} isLoading={isLoading} />;
 };
