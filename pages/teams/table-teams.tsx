@@ -52,6 +52,14 @@ interface TableTeamsProps {
 }
 
 const TableTeams: React.FC<TableTeamsProps> = ({ teams, isLoading }) => {
+  if (isLoading || !teams) {
+    return <div>Loading...</div>;
+  }
+
+  if (teams.length === 0) {
+    return <div>No games available.</div>;
+  }
+
   const columns = Columns();
   return <Table data={teams} columns={columns} isLoading={isLoading} />;
 };
