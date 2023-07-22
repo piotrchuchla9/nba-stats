@@ -204,7 +204,7 @@ export default function Navbar() {
                 <button
                   // @ts-ignore
                   onClick={() => window.theme_modal.showModal()}
-                  className="p-2 rounded-lg border-2 border-slate-400 hover:bg-slate-600 hover:text-white"
+                  className="p-2 rounded-lg border-2 border-slate-400 hover:bg-blue-500 hover:text-white"
                 >
                   <div className="flex gap-2">
                     <div>
