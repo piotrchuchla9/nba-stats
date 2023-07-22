@@ -1,7 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Cell, Legend, Pie, PieChart, Sector } from "recharts";
 
-const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"];
+const COLORS = [
+  "#FF6384",
+  "#36A2EB",
+  "#FFCE56",
+  "#4BC0C0",
+  "#00ed3b",
+  "#f28900",
+  "#f200da",
+];
 
 type Data = {
   name: string;
@@ -20,21 +29,26 @@ interface CustomActiveShapeProps {
   payload?: any;
   percent?: number;
   value?: number;
+  showPercent?: number;
 }
 
 interface CustomActiveShapePieChartProps {
   data: Data[];
   activeIndex?: number;
-  onPieEnter: (data: Data, index: number) => void;
-  onPieLeave: () => void;
+  visibleLegend?: boolean;
+  animationDuration?: number;
+  showPercent?: boolean;
+  showValue?: boolean;
 }
 
 const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps> = ({
-  activeIndex,
-  onPieEnter,
-  onPieLeave,
   data,
+  showValue = true,
+  showPercent = true,
+  visibleLegend = false,
+  animationDuration = 500,
 }) => {
+  const { t } = useTranslation();
   const renderActiveShape = (props: CustomActiveShapeProps) => {
     const RADIAN = Math.PI / 180;
     const {
@@ -45,8 +59,8 @@ const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps> = ({
       outerRadius,
       startAngle,
       endAngle,
-      fill,
       payload,
+      fill,
       percent,
       value,
     } = props;
@@ -62,9 +76,6 @@ const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps> = ({
 
     return (
       <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-          {payload.name}
-        </text>
         <Sector
           cx={cx}
           cy={cy}
@@ -92,27 +103,41 @@ const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps> = ({
         <text
           x={ex && ex + (cos >= 0 ? 1 : -1) * 12}
           y={ey}
-          dy={8}
           textAnchor={textAnchor}
-          fill="#333"
+          fill="#FF6384"
         >
-          {`Wartość ${value}`}
+          <tspan x={ex && ex + (cos >= 0 ? 1 : -1) * 12} dy={8}>
+            {payload.value}
+          </tspan>
         </text>
         <text
           x={ex && ex + (cos >= 0 ? 1 : -1) * 12}
           y={ey}
-          dy={24}
           textAnchor={textAnchor}
-          fill="#999"
+          fill="#61B9FD"
         >
-          {percent && `(Procent ${(percent * 100).toFixed(2)}%)`}
+          <tspan x={ex && ex + (cos >= 0 ? 1 : -1) * 12} dy={24}>
+            {payload.name}
+          </tspan>
+        </text>
+        <text
+          x={ex && ex + (cos >= 0 ? 1 : -1) * 12}
+          y={ey}
+          textAnchor={textAnchor}
+          fill="#FF6384"
+        >
+          <tspan x={ex && ex + (cos >= 0 ? 1 : -1) * 12} dy={40}>
+            {percent && showPercent && `${(percent * 100).toFixed(2)}%`}
+          </tspan>
         </text>
       </g>
     );
   };
 
+  const allIndices = data.map((_, index) => index);
+
   return (
-    <PieChart width={400} height={400} className="static mt-40 ml-40">
+    <PieChart width={600} height={550} className="static">
       <Pie
         data={data}
         dataKey="value"
@@ -122,16 +147,18 @@ const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps> = ({
         innerRadius={60}
         outerRadius={80}
         fill="#8884d8"
-        activeIndex={activeIndex}
+        activeIndex={allIndices}
         activeShape={renderActiveShape}
-        onMouseEnter={onPieEnter}
-        onMouseLeave={onPieLeave}
+        legendType="star"
+        animationBegin={0}
+        animationDuration={animationDuration}
+        animationEasing="ease-in-out"
       >
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
-      <Legend verticalAlign="bottom" height={36} />
+      {visibleLegend && <Legend verticalAlign="bottom" height={36} />}
     </PieChart>
   );
 };

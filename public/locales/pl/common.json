@@ -1,4 +1,7 @@
 {
+  "welcome": "Witaj na NBA Stats!",
+  "welcomeDesc": "Sprawdź ciekawe statystyki i szczegółowe dane z świata NBA!",
+  "dashboardWelcome": "Słyszałeś o tym?",
   "players": "zawodnicy",
   "teams": "drużyny",
   "games": "mecze",
@@ -68,5 +71,18 @@
     "firstName": "Imie",
     "position": "Pozycja",
     "team": "Drużyna"
+  },
+  "value": "Wartość",
+  "slides": {
+    "lebron": "LeBron James zdobył najwięcej punktów w historii NBA",
+    "billRussel": "Bill Russell wygrał ponad 14% wszystkich finałów NBA w historii. Był jednocześnie trenerem jak i zawodnikiem",
+    "mostFinals": "Najwięcej tytułów mistrzowskich NBA zdobyli Los Angeles Lakers i Boston Celtics",
+    "mostPointsPerGame": "Liderem wszechczasów pod względem średniej punktów na mecz jest Michael Jordan",
+    "mostPointsScored": "Wilt Chamberlain ma absurdalny rekord pod względem ilości zdobytych punktów. Jako jedyny zdobył 100 punktów w jednym meczu",
+    "tallest": "Manute Bol jest najwyższym zawodnikiem w historii NBA mierzącym 231 cm, a najniższym zawodnikiem jest Muggsy Bogues mierzący 160 cm",
+    "lastNames": "Williams to najpopularniejsze nazwisko w NBA",
+    "siblings": "W NBA jest 12 rodzeństw, a bracia Antetokounmpo wszyscy zdobyli mistrzostwo",
+    "allFinals": "Wszystkie Finały",
+    "restOfTheNBA": "Reszta NBA"
   }
 }

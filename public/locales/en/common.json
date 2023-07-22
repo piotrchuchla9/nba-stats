@@ -1,4 +1,7 @@
 {
+  "welcome": "Welcome on NBA Stats!",
+  "welcomeDesc": "Check out interesting statistics and detailed data from the world of the NBA!",
+  "dashboardWelcome": "Did you know about that?",
   "players": "players",
   "teams": "teams",
   "games": "games",
@@ -25,9 +28,9 @@
   },
   "hero": {
     "playersDesc": "Check it out player stats",
-    "teamsDesc": "Check it out stats about teams",
-    "gamesDesc": "Check it out stats about games",
-    "statsDesc": "Check it out the deep specific stats"
+    "teamsDesc": "Check out stats about teams",
+    "gamesDesc": "Check out stats about games",
+    "statsDesc": "Check out the deep specific stats"
   },
   "itemsPerPage": "Items",
   "loading": "Loading...",
@@ -68,5 +71,18 @@
     "firstName": "First Name",
     "position": "Position",
     "team": "Team"
+  },
+  "value": "Value",
+  "slides": {
+    "lebron": "LeBron James scored the most points in NBA history",
+    "billRussel": "Bill Russell won over 14% of all NBA Finals in history. He was both a coach and a player",
+    "mostFinals": "The Los Angeles Lakers and Boston Celtics have won the most NBA championships",
+    "mostPointsPerGame": "The all time leader in average points per game is Michael Jordan",
+    "mostPointsScored": "Wilt Chamberlain holds the absurd record for most points scored. He was the only one to score 100 points in one game",
+    "tallest": "Manute Bol is the tallest player in NBA history measuring 231 cm, while the shortest player in history is Muggsy Bogues measuring 160 cm",
+    "lastNames": "Williams is the most popular last name in the NBA",
+    "siblings": "There are 12 siblings in the NBA, the Antetokounmpo brothers, all of whom have won championships",
+    "allFinals": "All Finals",
+    "restOfTheNBA": "Rest of the NBA"
   }
 }
