@@ -1,4 +1,5 @@
 export * from "./icon-game";
+export * from "./icon-help";
 export * from "./icon-mail";
 export * from "./icon-players";
 export * from "./icon-poland";

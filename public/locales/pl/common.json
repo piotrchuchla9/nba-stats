@@ -79,10 +79,12 @@
     "mostFinals": "Najwięcej tytułów mistrzowskich NBA zdobyli Los Angeles Lakers i Boston Celtics",
     "mostPointsPerGame": "Liderem wszechczasów pod względem średniej punktów na mecz jest Michael Jordan",
     "mostPointsScored": "Wilt Chamberlain ma absurdalny rekord pod względem ilości zdobytych punktów. Jako jedyny zdobył 100 punktów w jednym meczu",
-    "tallest": "Manute Bol jest najwyższym zawodnikiem w historii NBA mierzącym 231 cm, a najniższym zawodnikiem jest Muggsy Bogues mierzący 160 cm",
+    "tallest": "Manute Bol jest najwyższym zawodnikiem w historii NBA mierzącym 231cm, a najniższym zawodnikiem jest Muggsy Bogues mierzący 160cm",
     "lastNames": "Williams to najpopularniejsze nazwisko w NBA",
     "siblings": "W NBA jest 12 rodzeństw, a bracia Antetokounmpo wszyscy zdobyli mistrzostwo",
     "allFinals": "Wszystkie Finały",
     "restOfTheNBA": "Reszta NBA"
-  }
+  },
+  "helpTitle": "Ważna Informacja!",
+  "helpDesc": "API wykorzystane w tej aplikacji nie jestem oficjalnym i udostępnionym przez NBA. Dane są niekompletne i nie są regularnie aktualizowane. Jeśli tylko będzie możliwość uzyskania dostępu do lepszego zbioru danych natychmiast z niego skorzystamy."
 }

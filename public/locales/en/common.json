@@ -79,10 +79,12 @@
     "mostFinals": "The Los Angeles Lakers and Boston Celtics have won the most NBA championships",
     "mostPointsPerGame": "The all time leader in average points per game is Michael Jordan",
     "mostPointsScored": "Wilt Chamberlain holds the absurd record for most points scored. He was the only one to score 100 points in one game",
-    "tallest": "Manute Bol is the tallest player in NBA history measuring 231 cm, while the shortest player in history is Muggsy Bogues measuring 160 cm",
+    "tallest": "Manute Bol is the tallest player in NBA history measuring 231cm, while the shortest player in history is Muggsy Bogues measuring 160cm",
     "lastNames": "Williams is the most popular last name in the NBA",
     "siblings": "There are 12 siblings in the NBA, the Antetokounmpo brothers, all of whom have won championships",
     "allFinals": "All Finals",
     "restOfTheNBA": "Rest of the NBA"
-  }
+  },
+  "helpTitle": "Important Information!",
+  "helpDesc": "The API used in this application is not official and provided by the NBA. The data is incomplete and not regularly updated. As soon as we have access to a better set of data, we will use it immediately."
 }
