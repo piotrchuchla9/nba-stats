@@ -28,7 +28,21 @@ function useAllTeams() {
         fetchData();
     }, []);
 
-    return { data, isLoading, isError };
+    const teamsSortedByDivision = data
+        ? [...data].sort((teamA, teamB) => teamA.division.localeCompare(teamB.division))
+        : null;
+
+    const teamsSortedByConference = data
+        ? [...data].sort((teamA, teamB) => teamA.conference.localeCompare(teamB.conference))
+        : null;
+
+    return {
+        data,
+        isLoading,
+        isError,
+        teamsSortedByDivision,
+        teamsSortedByConference,
+    };
 }
 
 export default useAllTeams;

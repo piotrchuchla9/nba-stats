@@ -15,7 +15,6 @@ export default function Games() {
   const {
     data: games,
     isLoading,
-    isError,
     meta,
     gamesSortedByHighestScore,
     gamesSortedByLowestScore,
