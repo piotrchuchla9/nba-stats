@@ -8,8 +8,12 @@ export default function Index() {
   return (
     <>
       <Hero text={t("welcome")} desc={t("welcomeDesc")} />
-      <p className="text-3xl mb-10 text-blue-400 text-center font-semibold">{t("dashboardWelcome")}</p>
-      <StatSlider />
+      <p className="text-3xl mb-10 text-blue-400 text-center font-semibold">
+        {t("dashboardWelcome")}
+      </p>
+      <div className="pr-4">
+        <StatSlider />
+      </div>
     </>
   );
 }

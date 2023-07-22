@@ -1,3 +1,4 @@
+import { IconArrowBackUp } from "@tabler/icons-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
@@ -5,6 +6,10 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import Datas from "./data";
+
+interface CustomArrowProps {
+  onClick?: () => void;
+}
 
 const DynamicPieChart = dynamic(() => import("@/components/pie-chart"), {
   ssr: false,
@@ -24,8 +29,28 @@ export default function StatSlider() {
     siblings,
   } = Datas();
 
+  const CustomPrevArrow = ({ onClick }: CustomArrowProps) => (
+    <button
+      onClick={onClick}
+      className="absolute top-1/2 left-0 z-10 transform -translate-y-1/2 bg-transparent text-gray-500 hover:text-blue-400 transition-all"
+    >
+      <IconArrowBackUp />
+    </button>
+  );
+
+  const CustomNextArrow = ({ onClick }: CustomArrowProps) => (
+    <button
+      onClick={onClick}
+      className="absolute top-1/2 right-0 z-10 transform -translate-y-1/2 bg-transparent text-gray-500 hover:text-blue-400 transition-all"
+    >
+      <div className="transform -scale-x-100">
+        <IconArrowBackUp />
+      </div>
+    </button>
+  );
+
   const settings: Settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1500,
     autoplay: true,
@@ -33,6 +58,8 @@ export default function StatSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1024,

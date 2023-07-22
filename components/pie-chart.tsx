@@ -1,5 +1,6 @@
+import { RootState } from "@/utils/redux/store";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import { Cell, Legend, Pie, PieChart, Sector } from "recharts";
 
 const COLORS = [
@@ -48,7 +49,8 @@ const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps> = ({
   visibleLegend = false,
   animationDuration = 500,
 }) => {
-  const { t } = useTranslation();
+  const theme = useSelector((state: RootState) => state.theme.theme);
+
   const renderActiveShape = (props: CustomActiveShapeProps) => {
     const RADIAN = Math.PI / 180;
     const {
@@ -114,8 +116,8 @@ const CustomActiveShapePieChart: React.FC<CustomActiveShapePieChartProps> = ({
           x={ex && ex + (cos >= 0 ? 1 : -1) * 12}
           y={ey}
           textAnchor={textAnchor}
-          fill="#61B9FD"
-        >
+          fill={theme === 'light' ? "#096eea" : "#61B9FD"}
+          >
           <tspan x={ex && ex + (cos >= 0 ? 1 : -1) * 12} dy={24}>
             {payload.name}
           </tspan>
