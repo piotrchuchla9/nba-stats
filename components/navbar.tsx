@@ -120,7 +120,7 @@ export default function Navbar() {
       <div className="flex">
         <Image width={32} src={logo} alt={"NBA Stats"} />
         <div className="flex items-center">
-          <Link className="pl-3 font-semibold text-3xl" href={"/"}>
+          <Link className="pl-3 font-semibold text-5xl" href={"/"}>
             NBA Stats
           </Link>
         </div>

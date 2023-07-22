@@ -29,6 +29,7 @@
     "gamesDesc": "Sprawdź statystyki w poszczególnych meczach",
     "statsDesc": "Sprawdź zaawansowane statystyki"
   },
+  "itemsPerPage": "Pozycji",
   "loading": "Ładowanie...",
   "noGames": "Brak dostępnych meczy",
   "noPlayers": "Brak dostępnych zawodników",
@@ -62,6 +63,10 @@
     "biggestDifference": "Największa Różnica",
     "teams": "Drużyny",
     "division": "Dywizja",
-    "conference": "Konferencja"
+    "conference": "Konferencja",
+    "lastName": "Nazwisko",
+    "firstName": "Imie",
+    "position": "Pozycja",
+    "team": "Drużyna"
   }
 }

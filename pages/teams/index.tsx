@@ -28,15 +28,13 @@ export default function Teams() {
   return (
     <>
       <Hero text={t("teams")} desc={t("hero.teamsDesc")} />
-      <div className="py-10">
-        <div className="mb-10">
-          <RadioTeamsOptions
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-          />
-        </div>
-        {teams && <TableTeams teams={displayedTeams} isLoading={isLoading} />}
+      <div className="mb-10">
+        <RadioTeamsOptions
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
+        />
       </div>
+      {teams && <TableTeams teams={displayedTeams} isLoading={isLoading} />}
     </>
   );
 }

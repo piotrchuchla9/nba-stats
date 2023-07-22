@@ -30,7 +30,23 @@ function useAllPlayers(page: number, perPage?: number) {
         fetchData();
     }, [page, perPage]);
 
-    return { data, isLoading, isError, meta };
+    const playersSortedByFirstName = data
+        ? [...data].sort((playerA, playerB) => playerA.first_name.localeCompare(playerB.first_name))
+        : null;
+
+    const playersSortedByLastName = data
+        ? [...data].sort((playerA, playerB) => playerA.last_name.localeCompare(playerB.last_name))
+        : null;
+
+    const playersSortedByPosition = data
+        ? [...data].sort((playerA, playerB) => playerA.position.localeCompare(playerB.position))
+        : null;
+
+    const playersSortedByTeam = data
+        ? [...data].sort((playerA, playerB) => playerA.team.full_name.localeCompare(playerB.team.full_name))
+        : null;
+
+    return { data, isLoading, isError, meta, playersSortedByFirstName, playersSortedByLastName, playersSortedByPosition, playersSortedByTeam };
 }
 
 export default useAllPlayers;

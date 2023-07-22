@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-interface RadioGamesOptionsProps {
+interface RadioTeamsOptionsProps {
   selectedOption: string;
   setSelectedOption: (option: string) => void;
 }
@@ -8,7 +8,7 @@ interface RadioGamesOptionsProps {
 export default function RadioTeamsOptions({
   selectedOption,
   setSelectedOption,
-}: RadioGamesOptionsProps) {
+}: RadioTeamsOptionsProps) {
   const { t } = useTranslation();
 
   return (

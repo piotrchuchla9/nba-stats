@@ -29,6 +29,7 @@
     "gamesDesc": "Check it out stats about games",
     "statsDesc": "Check it out the deep specific stats"
   },
+  "itemsPerPage": "Items",
   "loading": "Loading...",
   "noGames": "No games avalible",
   "noPlayers": "No players avalible",
@@ -62,6 +63,10 @@
     "biggestDifference": "Biggest Difference",
     "teams": "Teams",
     "division": "Division",
-    "conference": "Conferrence"
+    "conference": "Conferrence",
+    "lastName": "Last Name",
+    "firstName": "First Name",
+    "position": "Position",
+    "team": "Team"
   }
 }

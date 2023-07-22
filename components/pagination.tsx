@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 interface PaginationInterface {
   page: number;
   setPage: (page: number) => void;
@@ -13,6 +15,7 @@ export default function Pagination({
   perPage,
   itemsPerPage,
 }: PaginationInterface) {
+  const { t } = useTranslation();
 
   const increasePage = () => {
     if (page === maxPage) return;
@@ -46,7 +49,7 @@ export default function Pagination({
         <div className="mt-2.5 mr-4">
           <div className="form-control w-32 max-w-xs">
             <label className="label">
-              <span className="label-text">Items per page</span>
+              <span className="label-text">{t("itemsPerPage")}</span>
             </label>
             <input
               type="number"
