@@ -1,6 +1,7 @@
 import { Table } from "@/components/table";
 import { Game } from "@/utils/types";
 import { createColumnHelper } from "@tanstack/react-table";
+import { useTranslation } from "react-i18next";
 
 const columnHelper = createColumnHelper<Game>();
 
@@ -17,14 +18,25 @@ const Columns = () => {
         info.row.original.home_team_score >
         info.row.original.visitor_team_score ? (
           <div className="text-green-700">
-            <div>
-              <p>{info.getValue()}</p>
-            </div>
+            <p>{info.getValue()}</p>
           </div>
         ) : (
           <span className="text-red-400">{info.getValue()}</span>
         ),
       header: "home_team",
+    }),
+    columnHelper.accessor((row) => row.home_team_score, {
+      id: "home_team_score",
+      cell: (info) =>
+        info.row.original.home_team_score <
+        info.row.original.visitor_team_score ? (
+          <span className="text-red-400">{info.getValue()}</span>
+        ) : (
+          <div className="text-green-700">
+            <p>{info.getValue()}</p>
+          </div>
+        ),
+      header: "home_team_score",
     }),
     columnHelper.accessor((row) => row.visitor_team.abbreviation, {
       id: "visitor_team",
@@ -32,23 +44,24 @@ const Columns = () => {
         info.row.original.home_team_score <
         info.row.original.visitor_team_score ? (
           <div className="text-green-700">
-            <div>
-              <p>{info.getValue()}</p>
-            </div>
+            <p>{info.getValue()}</p>
           </div>
         ) : (
           <span className="text-red-400">{info.getValue()}</span>
         ),
       header: "visitor_team",
     }),
-    columnHelper.accessor((row) => row.home_team_score, {
-      id: "home_team_score",
-      cell: (info) => info.getValue(),
-      header: "home_team_score",
-    }),
     columnHelper.accessor((row) => row.visitor_team_score, {
       id: "visitor_team_score",
-      cell: (info) => info.getValue(),
+      cell: (info) =>
+        info.row.original.home_team_score <
+        info.row.original.visitor_team_score ? (
+          <div className="text-green-700">
+            <p>{info.getValue()}</p>
+          </div>
+        ) : (
+          <span className="text-red-400">{info.getValue()}</span>
+        ),
       header: "visitor_team_score",
     }),
     columnHelper.accessor((row) => row.date, {
@@ -82,12 +95,13 @@ interface TableGamesProps {
 }
 
 const TableGames: React.FC<TableGamesProps> = ({ games, isLoading }) => {
+  const { t } = useTranslation();
   if (isLoading || !games) {
-    return <div>Loading...</div>;
+    return <div>{t("loading")}</div>;
   }
 
   if (games.length === 0) {
-    return <div>No games available.</div>;
+    return <div>{t("noGames")}</div>;
   }
 
   const columns = Columns();

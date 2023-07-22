@@ -29,6 +29,10 @@
         "gamesDesc": "Sprawdź statystyki w poszczególnych meczach",
         "statsDesc": "Sprawdź zaawansowane statystyki"
     },
+    "loading": "Ładowanie...",
+    "noGames": "Brak dostępnych meczy",
+    "noPlayers": "Brak dostępnych zawodników",
+    "noTeams": "Brak dostępnych drużyn",
     "first_name": "Imie",
     "last_name": "Nazwisko",
     "position": "Pozycja",
@@ -50,5 +54,11 @@
     "date": "Data",
     "status": "Status",
     "peroid": "Kwarty",
-    "season": "Sezon"
+    "season": "Sezon",
+    "radio": {
+        "games": "Mecze",
+        "highestScore": "Najwięcej Punktów",
+        "lowestScore": "Najmniej Punktów",
+        "biggestDifference": "Największa Różnica"
+    }
 }

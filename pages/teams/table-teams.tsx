@@ -1,6 +1,7 @@
 import { Table } from "@/components/table";
 import { Team } from "@/utils/types";
 import { createColumnHelper } from "@tanstack/react-table";
+import { useTranslation } from "react-i18next";
 
 const columnHelper = createColumnHelper<Team>();
 
@@ -52,12 +53,14 @@ interface TableTeamsProps {
 }
 
 const TableTeams: React.FC<TableTeamsProps> = ({ teams, isLoading }) => {
+  const { t } = useTranslation();
+
   if (isLoading || !teams) {
-    return <div>Loading...</div>;
+    return <div>{t("loading")}</div>;
   }
 
   if (teams.length === 0) {
-    return <div>No games available.</div>;
+    return <div>{t("noTeams")}</div>;
   }
 
   const columns = Columns();

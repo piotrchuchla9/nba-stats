@@ -34,7 +34,6 @@ function TableHeaderCell<TData>(header: Header<TData, unknown>) {
           onClick={header.column.getToggleSortingHandler()}
         >
           {flexRender(header.column.columnDef.header, header.getContext())}
-          <IconSort className="mt-2 ml-1" />
         </button>
       ) : (
         <span>

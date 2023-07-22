@@ -1,5 +1,3 @@
-import { IconSettings } from "@/public/icons";
-
 interface PaginationInterface {
   page: number;
   setPage: (page: number) => void;
@@ -15,6 +13,7 @@ export default function Pagination({
   perPage,
   itemsPerPage,
 }: PaginationInterface) {
+
   const increasePage = () => {
     if (page === maxPage) return;
     return setPage(page + 1);
@@ -42,7 +41,7 @@ export default function Pagination({
   };
 
   return (
-    <div className="">
+    <div className="w-1/2">
       <div className="flex justify-end mb-10">
         <div className="mt-2.5 mr-4">
           <div className="form-control w-32 max-w-xs">
@@ -52,7 +51,7 @@ export default function Pagination({
             <input
               type="number"
               placeholder={perPage.toString()}
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs text-center"
               onChange={setItemsPerPage}
             />
           </div>

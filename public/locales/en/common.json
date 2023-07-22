@@ -29,6 +29,10 @@
         "gamesDesc": "Check it out stats about games",
         "statsDesc": "Check it out the deep specific stats"
     },
+    "loading": "Loading...",
+    "noGames": "No games avalible",
+    "noPlayers": "No players avalible",
+    "noTeams": "No teams avalible",
     "first_name": "Name",
     "last_name": "Surename",
     "position": "Position",
@@ -50,5 +54,11 @@
     "date": "Date",
     "status": "Status",
     "peroid": "Quarters",
-    "season": "Season"
+    "season": "Season",
+    "radio": {
+        "games": "Games",
+        "highestScore": "Highest Score",
+        "lowestScore": "Lowest Score",
+        "biggestDifference": "Biggest Difference"
+    }
 }

@@ -14,27 +14,31 @@ export default function Index() {
   return (
     <>
       <Hero text={t("players")} desc={t("hero.playersDesc")} />
-      {meta && (
-        <Pagination
-          page={meta.current_page}
-          setPage={setPage}
-          maxPage={meta.total_pages}
-          perPage={perPage}
-          itemsPerPage={setPerPage}
-        />
-      )}
+      <div className="flex justify-end">
+        {meta && (
+          <Pagination
+            page={meta.current_page}
+            setPage={setPage}
+            maxPage={meta.total_pages}
+            perPage={perPage}
+            itemsPerPage={setPerPage}
+          />
+        )}
+      </div>
       {allPlayers && (
         <TablePlayers players={allPlayers} isLoading={isLoading} />
       )}
-      {meta && (
-        <Pagination
-          page={meta.current_page}
-          setPage={setPage}
-          maxPage={meta.total_pages}
-          perPage={perPage}
-          itemsPerPage={setPerPage}
-        />
-      )}
+      <div className="flex justify-end">
+        {meta && (
+          <Pagination
+            page={meta.current_page}
+            setPage={setPage}
+            maxPage={meta.total_pages}
+            perPage={perPage}
+            itemsPerPage={setPerPage}
+          />
+        )}
+      </div>
     </>
   );
 }
