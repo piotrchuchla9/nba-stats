@@ -255,11 +255,11 @@ export default function Navbar() {
                 </button>
                 <dialog id="help_modal" className="modal">
                   <form method="dialog" className="modal-box">
-                    <h3 className="font-bold text-lg text-center text-red-600">
+                    <h3 className="font-bold text-3xl text-center text-red-600">
                       {t("helpTitle")}
                     </h3>
                     <div className="flex pt-10 pb-5 items-center justify-center gap-10">
-                      <p className="text-center font-semibold">{t("helpDesc")}</p>
+                      <p className="text-center text-xl">{t("helpDesc")}</p>
                     </div>
                   </form>
                   <form method="dialog" className="modal-backdrop">

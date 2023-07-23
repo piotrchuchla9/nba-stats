@@ -59,7 +59,12 @@
   "status": "Status",
   "peroid": "Kwarty",
   "season": "Sezon",
+  "searchPlayer": "Szukaj Zawodnika",
+  "player": "Zawodnik",
+  "playerLike": "Zawodnik",
+  "playerNotFound": "Nie znaleziono zawodnika",
   "radio": {
+    "id": "ID",
     "games": "Mecze",
     "highestScore": "Najwięcej Punktów",
     "lowestScore": "Najmniej Punktów",

@@ -60,29 +60,29 @@ export default function Pagination({
           </div>
         </div>
         <div className="join flex items-end">
-          <button className="btn" onClick={decreasePage}>
+          <div className="btn" onClick={decreasePage}>
             {"<"}
-          </button>
-          <button className="join-item btn" onClick={() => setPage(1)}>
+          </div>
+          <div className="join-item btn" onClick={() => setPage(1)}>
             1
-          </button>
+          </div>
           <input
             type="number"
             placeholder={page.toString()}
             className="input text-center input-bordered w-20 max-w-xs mx-1"
             onChange={handleInputChange}
           />
-          <button
+          <div
             className="join-item btn"
             onClick={() => {
               setPage(maxPage);
             }}
           >
             {maxPage}
-          </button>
-          <button className="btn" onClick={increasePage}>
+          </div>
+          <div className="btn" onClick={increasePage}>
             {">"}
-          </button>
+          </div>
         </div>
       </div>
     </div>

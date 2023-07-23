@@ -1,12 +1,14 @@
 import { Table } from "@/components/table";
+import { IconError } from "@/public/icons";
 import { Player } from "@/utils/types";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { setError } from "@/utils/redux/slices/dataNotFoundSlice";
 
 const columnHelper = createColumnHelper<Player>();
 
 const Columns = () => {
-
   const columns = [
     columnHelper.accessor((row) => row.id, {
       id: "id",
@@ -27,9 +29,9 @@ const Columns = () => {
       id: "position",
       cell: (info) =>
         info.getValue() !== "" ? (
-          <div className="flex justify-center mr-1 w-20">{info.getValue()}</div>
+          <div className="flex justify-center">{info.getValue()}</div>
         ) : (
-          <div className="flex justify-center mr-1 w-20">-</div>
+          <div className="flex justify-center">-</div>
         ),
       header: "position",
     }),
@@ -42,9 +44,11 @@ const Columns = () => {
       id: "height_feet",
       cell: (info) =>
         info.getValue() !== null ? (
-          <div className="flex justify-center mr-1 w-20">{info.getValue()}</div>
+          <div className="flex justify-center">{`${info.getValue()} - ${
+            info.row.original.height_inches
+          }`}</div>
         ) : (
-          <div className="flex justify-center mr-1 w-20">-</div>
+          <div className="flex justify-center">-</div>
         ),
       header: "height_feet",
     }),
@@ -52,11 +56,11 @@ const Columns = () => {
       id: "height_inches",
       cell: (info) =>
         info.getValue() !== null ? (
-          <div className="flex justify-center mr-1 w-20">
+          <div className="flex justify-center">
             {(Number(info.getValue()) * 30.48).toFixed()}
           </div>
         ) : (
-          <div className="flex justify-center mr-1 w-20">-</div>
+          <div className="flex justify-center">-</div>
         ),
       header: "height_inches",
     }),
@@ -64,9 +68,9 @@ const Columns = () => {
       id: "weight_pounds",
       cell: (info) =>
         info.getValue() !== null ? (
-          <div className="flex justify-center mr-1 w-20">{info.getValue()}</div>
+          <div className="flex justify-center">{info.getValue()}</div>
         ) : (
-          <div className="flex justify-center mr-1 w-20">-</div>
+          <div className="flex justify-center">-</div>
         ),
       header: "weight_pounds",
     }),
@@ -74,11 +78,11 @@ const Columns = () => {
       id: "weight_pounds",
       cell: (info) =>
         info.getValue() !== null ? (
-          <div className="flex justify-center mr-1 w-20">
+          <div className="flex justify-center">
             {(Number(info.getValue()) * 0.453).toFixed()}
           </div>
         ) : (
-          <div className="flex justify-center mr-1 w-20">-</div>
+          <div className="flex justify-center">-</div>
         ),
       header: "weight_kilograms",
     }),
@@ -94,13 +98,25 @@ interface TablePlayersProps {
 
 const TablePlayers: React.FC<TablePlayersProps> = ({ players, isLoading }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   if (isLoading || !players) {
     return <div>{t("loading")}</div>;
   }
 
   if (players.length === 0) {
-    return <div>{t("noPlayers")}</div>;
+    // dispatch(setError(true));
+
+    return (
+      <div>
+        <div>
+          <p className="text-center">{t("noPlayers")}</p>
+        </div>
+        <div className="flex justify-center text-red-400">
+          <IconError />
+        </div>
+      </div>
+    );
   }
 
   const columns = Columns();

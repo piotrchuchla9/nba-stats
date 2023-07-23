@@ -92,6 +92,7 @@ export default function StatSlider() {
               fill={true}
               className="pt-10"
               objectFit="contain"
+              loading="lazy"
             />
           </div>
           <div className="flex justify-center">

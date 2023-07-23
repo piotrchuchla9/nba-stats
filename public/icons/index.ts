@@ -1,3 +1,4 @@
+export * from "./icon-error";
 export * from "./icon-game";
 export * from "./icon-help";
 export * from "./icon-mail";

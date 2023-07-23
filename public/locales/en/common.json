@@ -59,7 +59,12 @@
   "status": "Status",
   "peroid": "Quarters",
   "season": "Season",
+  "searchPlayer": "Search Player",
+  "player": "Player",
+  "playerLike": "Player Like",
+  "playerNotFound": "Player Not Found",
   "radio": {
+    "id": "ID",
     "games": "Games",
     "highestScore": "Highest Score",
     "lowestScore": "Lowest Score",

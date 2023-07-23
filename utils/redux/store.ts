@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from './slices/themeSlice'
+import errorReducer from './slices/dataNotFoundSlice'
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
+    error: errorReducer,
   },
 });
 

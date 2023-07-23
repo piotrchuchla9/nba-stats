@@ -5,37 +5,42 @@ import TablePlayers from "./table-players";
 import { useState } from "react";
 import Pagination from "@/components/pagination";
 import RadioPlayersOptions from "./radio-options";
+import SearchPlayer from "./search-player";
 
 export default function Index() {
   const { t } = useTranslation();
   const [page, setPage] = useState<number>(1);
   const [perPage, setPerPage] = useState<number>(25);
-  const [selectedOption, setSelectedOption] = useState<string>("lastName");
+  const [selectedOption, setSelectedOption] = useState<string>("id");
   const {
     data: players,
     playersSortedByFirstName,
     playersSortedByLastName,
     playersSortedByPosition,
     playersSortedByTeam,
+    playersSortedByID,
     isLoading,
     meta,
   } = useAllPlayers(page, perPage);
 
-  let displayedTeams = players || [];
+  let displayedPlayers = players || [];
 
-  if (selectedOption === "lastName") {
-    displayedTeams = playersSortedByLastName || [];
+  if (selectedOption === "id") {
+    displayedPlayers = playersSortedByID || [];
+  } else if (selectedOption === "lastName") {
+    displayedPlayers = playersSortedByLastName || [];
   } else if (selectedOption === "firstName") {
-    displayedTeams = playersSortedByFirstName || [];
+    displayedPlayers = playersSortedByFirstName || [];
   } else if (selectedOption === "position") {
-    displayedTeams = playersSortedByPosition || [];
+    displayedPlayers = playersSortedByPosition || [];
   } else if (selectedOption === "team") {
-    displayedTeams = playersSortedByTeam || [];
+    displayedPlayers = playersSortedByTeam || [];
   }
 
   return (
     <>
       <Hero text={t("players")} desc={t("hero.playersDesc")} />
+      <SearchPlayer />
       <div className="flex justify-end">
         <RadioPlayersOptions
           selectedOption={selectedOption}
@@ -52,7 +57,7 @@ export default function Index() {
         )}
       </div>
       {players && (
-        <TablePlayers players={displayedTeams} isLoading={isLoading} />
+        <TablePlayers players={displayedPlayers} isLoading={isLoading} />
       )}
       <div className="flex justify-end">
         {meta && (
