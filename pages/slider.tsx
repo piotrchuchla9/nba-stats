@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Datas from "./data";
+import Datas from "../utils/data";
 
 interface CustomArrowProps {
   onClick?: () => void;
