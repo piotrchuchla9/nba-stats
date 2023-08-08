@@ -9,13 +9,15 @@ interface NavElementProps {
   icon: ReactNode;
   link: string;
   text: string;
+  className?: string;
+  size?: string;
 }
 
 export default function NavElement(props: NavElementProps) {
   const { i18n } = useTranslation();
   const theme = useSelector((state: RootState) => state.theme.theme);
 
-  const { icon, link, text } = props;
+  const { icon, link, text, className, size } = props;
   const router = useRouter();
   const isActive = router.pathname === link;
 
@@ -31,7 +33,7 @@ export default function NavElement(props: NavElementProps) {
     `group ${theme === "light" ? "hover:text-blue-600" : "hover:text-blue-300"}`
   );
   const textClasses = twMerge(
-    "text-xl",
+    size || "text-xl",
     isActive &&
       (theme === "light" ? "text-blue-600 font-semibold" : "text-blue-300")
   );
@@ -39,7 +41,7 @@ export default function NavElement(props: NavElementProps) {
   return (
     <div className={containerClasses}>
       <Link href={`${i18n.language}${link}`}>
-        <div className={itemClasses}>
+        <div className={twMerge(itemClasses, className)}>
           <div
             className={twMerge(
               theme === "light"

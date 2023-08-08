@@ -1,3 +1,4 @@
+import { Hamburger } from "@/components/hamburger";
 import Navbar from "@/components/navbar";
 import PageTransition from "@/components/page-transition";
 import { RootState } from "@/utils/redux/store";
@@ -13,8 +14,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="flex" data-theme={theme}>
-      <div className="w-96 z-10">
+      <div className="w-96 z-10 hidden 2xl:block">
         <Navbar />
+      </div>
+      <div className="block 2xl:hidden">
+        <Hamburger />
       </div>
       <div className="flex-1 h-screen p-12 overflow-y-auto relative">
         <PageTransition>{children}</PageTransition>

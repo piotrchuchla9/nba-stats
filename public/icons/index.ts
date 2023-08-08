@@ -1,5 +1,7 @@
+export * from "./icon-close";
 export * from "./icon-error";
 export * from "./icon-game";
+export * from "./icon-hamburger";
 export * from "./icon-help";
 export * from "./icon-mail";
 export * from "./icon-players";
@@ -11,4 +13,3 @@ export * from "./icon-teams";
 export * from "./icon-theme";
 export * from "./icon-usa";
 export * from "./icon-win";
-

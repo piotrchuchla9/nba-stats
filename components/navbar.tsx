@@ -135,7 +135,7 @@ export default function Navbar() {
           />
           <NavElement icon={<IconTeams />} link={"/teams"} text={t("teams")} />
           <NavElement icon={<IconGame />} link={"/games"} text={t("games")} />
-          <NavElement icon={<IconStats />} link={"/stats"} text={t("stats")} />
+          {/* <NavElement icon={<IconStats />} link={"/stats"} text={t("stats")} /> */}
         </div>
         <div className="mt-auto flex flex-col gap-4">
           <button

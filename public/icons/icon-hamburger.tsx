@@ -1,12 +1,12 @@
 import IconColorProp from "./color-interface";
 
-export function IconMail({ color, size }: IconColorProp) {
+export function IconHamburger({ color }: IconColorProp) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-mail"
-      width={size || "28"}
-      height={size || "28"}
+      className="icon icon-tabler icon-tabler-menu-2"
+      width="52"
+      height="52"
       viewBox="0 0 24 24"
       strokeWidth="2"
       stroke={color || "currentColor"}
@@ -15,8 +15,9 @@ export function IconMail({ color, size }: IconColorProp) {
       strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
-      <path d="M3 7l9 6l9 -6"></path>
+      <path d="M4 6l16 0"></path>
+      <path d="M4 12l16 0"></path>
+      <path d="M4 18l16 0"></path>
     </svg>
   );
 }

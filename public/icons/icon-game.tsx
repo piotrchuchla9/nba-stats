@@ -1,12 +1,12 @@
 import IconColorProp from "./color-interface";
 
-export function IconGame({ color }: IconColorProp) {
+export function IconGame({ color, size }: IconColorProp) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="icon icon-tabler icon-tabler-ball-basketball"
-      width="28"
-      height="28"
+      width={size || "28"}
+      height={size || "28"}
       viewBox="0 0 24 24"
       strokeWidth="2"
       stroke={color || "currentColor"}
