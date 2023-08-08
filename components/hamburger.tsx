@@ -25,7 +25,7 @@ import { twMerge } from "tailwind-merge";
 
 export function Hamburger() {
   const [open, setOpen] = useState<boolean>(true);
-  const [openForm, setOpenForm] = useState<boolean>(true);
+  const [openForm, setOpenForm] = useState<boolean>(false);
   const { i18n } = useTranslation();
   const router = useRouter();
   const dispatch = useDispatch();
@@ -78,7 +78,7 @@ export function Hamburger() {
       {open && (
         <div
           className={twMerge(
-            `absolute top-0 right-0 z-30 w-full h-full`,
+            `absolute top-0 right-0 z-30 w-full h-screen`,
             theme === "dark" && "bg-gray-800",
             theme === "light" && "bg-white",
             theme === "synthwave" && "bg-[#1A103C]"
@@ -93,7 +93,7 @@ export function Hamburger() {
                     className="flex items-center"
                   >
                     <Image width={42} src={logo} alt={"NBA Stats"} />
-                    <Link className="pl-3 font-semibold text-5xl" href={"/"}>
+                    <Link className="pl-3 font-semibold text-2xl md:text-5xl" href={"/"}>
                       NBA Stats
                     </Link>
                   </button>
@@ -104,21 +104,21 @@ export function Hamburger() {
                     link={"/players"}
                     text={t("players")}
                     className="border-0"
-                    size="text-4xl"
+                    size="text-xl pt-2 md:text-4xl md:pt-0"
                   />
                   <NavElement
                     icon={<IconTeams size={42} />}
                     link={"/teams"}
                     text={t("teams")}
                     className="border-0"
-                    size="text-4xl"
+                    size="text-xl pt-2 md:text-4xl md:pt-0"
                   />
                   <NavElement
                     icon={<IconGame size={42} />}
                     link={"/games"}
                     text={t("games")}
                     className="border-0"
-                    size="text-4xl"
+                    size="text-xl pt-2 md:text-4xl md:pt-0"
                   />
                 </button>
               </div>
@@ -132,7 +132,7 @@ export function Hamburger() {
                     <div className="group-hover/item:text-blue-300">
                       <IconMail size={42} />
                     </div>
-                    <div className="group-hover/item:text-blue-300 text-4xl">
+                    <div className="group-hover/item:text-blue-300 text-xl pt-2 md:text-4xl md:pt-0">
                       {t("contact")}
                     </div>
                   </div>
@@ -153,7 +153,7 @@ export function Hamburger() {
                         <IconTheme />
                       </div>
                       <div className="pr-2">
-                        <span>{t("theme")}</span>
+                        <span className="text-sm pl-1">{t("themeShort")}</span>
                       </div>
                     </div>
                     <button

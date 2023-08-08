@@ -9,6 +9,7 @@
   "contact": "Contact Us",
   "settings": "Settings",
   "theme": "Page theme",
+  "themeShort": "Theme",
   "themeModalTitle": "Choose page theme:",
   "close": "close",
   "themes": {
