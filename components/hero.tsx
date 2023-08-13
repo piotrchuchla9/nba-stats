@@ -6,7 +6,7 @@ interface HeroInterface {
 export default function Hero(props: HeroInterface) {
   const { text, desc } = props;
   return (
-    <div className="h-28">
+    <div className="h-28 w-3/4">
       <p className="font-semibold text-4xl uppercase">{text}</p>
       <p className="mt-4">{desc}</p>
     </div>

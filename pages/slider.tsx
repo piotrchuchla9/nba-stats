@@ -64,7 +64,7 @@ export default function StatSlider() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -95,7 +95,7 @@ export default function StatSlider() {
               loading="lazy"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart
               data={lebronPoints}
               showPercent={true}
@@ -118,7 +118,7 @@ export default function StatSlider() {
               objectFit="contain"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart data={russelFinalsApperance} />
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function StatSlider() {
               objectFit="contain"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart
               data={mostFinals}
               showPercent={true}
@@ -160,7 +160,7 @@ export default function StatSlider() {
               objectFit="contain"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart
               data={mostPointsPerGame}
               showPercent={false}
@@ -183,7 +183,7 @@ export default function StatSlider() {
               objectFit="contain"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart
               data={mostPointsScored}
               showPercent={true}
@@ -206,7 +206,7 @@ export default function StatSlider() {
               objectFit="contain"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart
               data={tallestAndSmallest}
               showPercent={false}
@@ -229,7 +229,7 @@ export default function StatSlider() {
               objectFit="contain"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart
               data={lastNames}
               showPercent={false}
@@ -252,7 +252,7 @@ export default function StatSlider() {
               objectFit="contain"
             />
           </div>
-          <div className="flex justify-center">
+          <div className="justify-center hidden md:flex">
             <DynamicPieChart
               data={siblings}
               showPercent={false}
