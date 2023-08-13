@@ -90,7 +90,7 @@ export default function StatSlider() {
               src={"/images/lebron.png"}
               alt="LeBron James"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
               loading="lazy"
             />
@@ -114,7 +114,7 @@ export default function StatSlider() {
               src={"/images/billrussel.png"}
               alt="Bill Russel"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
             />
           </div>
@@ -133,7 +133,7 @@ export default function StatSlider() {
               src={"/images/finals.png"}
               alt="Bill Russel"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
             />
           </div>
@@ -156,7 +156,7 @@ export default function StatSlider() {
               src={"/images/jordan.png"}
               alt="Michael Jordan"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
             />
           </div>
@@ -179,7 +179,7 @@ export default function StatSlider() {
               src={"/images/wilt.png"}
               alt="Wilt Chamberlain"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
             />
           </div>
@@ -202,7 +202,7 @@ export default function StatSlider() {
               src={"/images/bolmuggsy.png"}
               alt="Manute Bol Muggsy Bogues"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
             />
           </div>
@@ -225,7 +225,7 @@ export default function StatSlider() {
               src={"/images/williams.png"}
               alt="Deron Williams"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
             />
           </div>
@@ -248,7 +248,7 @@ export default function StatSlider() {
               src={"/images/ante.png"}
               alt="Antetokounmpo"
               fill={true}
-              className="pt-10"
+              className="pt-0 md:pt-10"
               objectFit="contain"
             />
           </div>

@@ -24,7 +24,7 @@ import { setTheme } from "@/utils/redux/slices/themeSlice";
 import { twMerge } from "tailwind-merge";
 
 export function Hamburger() {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   const [openForm, setOpenForm] = useState<boolean>(false);
   const { i18n } = useTranslation();
   const router = useRouter();
