@@ -44,9 +44,9 @@ export default function Pagination({
   };
 
   return (
-    <div className="w-1/2">
+    <div className="w-full 2xl:w-1/2">
       <div className="flex justify-end mb-10">
-        <div className="mt-2.5 mr-4">
+        <div className="mt-2.5 mr-4 hidden md:block">
           <div className="form-control w-32 max-w-xs">
             <label className="label">
               <span className="label-text">{t("itemsPerPage")}</span>

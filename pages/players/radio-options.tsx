@@ -12,8 +12,8 @@ export default function RadioPlayersOptions({
   const { t } = useTranslation();
 
   return (
-    <div className="flex mt-4 w-1/2">
-      <div className="form-control">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:flex 2xl:mt-4 min-w-1/2 w-screen">
+      <div className="form-control w-1/2 2xl:w-full text-center">
         <label className="label cursor-pointer flex flex-col">
           <div className="label-text mr-2">{t("radio.id")}</div>
           <input
@@ -25,7 +25,7 @@ export default function RadioPlayersOptions({
           />
         </label>
       </div>
-      <div className="form-control">
+      <div className="form-control w-1/2 2xl:w-full text-center">
         <label className="label cursor-pointer flex flex-col">
           <div className="label-text mr-2">{t("radio.lastName")}</div>
           <input
@@ -37,7 +37,7 @@ export default function RadioPlayersOptions({
           />
         </label>
       </div>
-      <div className="form-control">
+      <div className="form-control w-1/2 2xl:w-full text-center">
         <label className="label cursor-pointer flex flex-col">
           <div className="label-text mr-2">{t("radio.firstName")}</div>
           <input
@@ -49,7 +49,7 @@ export default function RadioPlayersOptions({
           />
         </label>
       </div>
-      <div className="form-control">
+      <div className="form-control w-1/2 2xl:w-full text-center">
         <label className="label cursor-pointer flex flex-col">
           <div className="label-text mr-2">{t("radio.position")}</div>
           <input
@@ -61,7 +61,7 @@ export default function RadioPlayersOptions({
           />
         </label>
       </div>
-      <div className="form-control">
+      <div className="form-control w-1/2 2xl:w-full text-center">
         <label className="label cursor-pointer flex flex-col">
           <div className="label-text mr-2">{t("radio.team")}</div>
           <input

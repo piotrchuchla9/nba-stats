@@ -3,8 +3,6 @@ import { IconError } from "@/public/icons";
 import { Player } from "@/utils/types";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
-import { setError } from "@/utils/redux/slices/dataNotFoundSlice";
 
 const columnHelper = createColumnHelper<Player>();
 
@@ -98,15 +96,12 @@ interface TablePlayersProps {
 
 const TablePlayers: React.FC<TablePlayersProps> = ({ players, isLoading }) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
 
   if (isLoading || !players) {
     return <div>{t("loading")}</div>;
   }
 
   if (players.length === 0) {
-    // dispatch(setError(true));
-
     return (
       <div>
         <div>

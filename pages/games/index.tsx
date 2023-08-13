@@ -39,7 +39,7 @@ export default function Games() {
   return (
     <>
       <Hero text={t("games")} desc={t("hero.gamesDesc")} />
-      <div className="flex justify-end">
+      <div className="flex flex-col 2xl:flex-row justify-end mr-10 md:mr-0">
         <RadioGamesOptions
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
@@ -55,7 +55,7 @@ export default function Games() {
         )}
       </div>
       {meta && <TableGames games={displayedGames} isLoading={isLoading} />}
-      <div className="flex justify-end">
+      <div className="flex justify-end mt-2.5 md:mt-0 mr-10 md:mr-0">
         {meta && (
           <Pagination
             page={meta.current_page}

@@ -41,7 +41,7 @@ export default function Index() {
     <>
       <Hero text={t("players")} desc={t("hero.playersDesc")} />
       <SearchPlayer />
-      <div className="flex justify-end">
+      <div className="flex flex-col 2xl:flex-row justify-end mr-10 md:mr-0">
         <RadioPlayersOptions
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
@@ -59,7 +59,7 @@ export default function Index() {
       {players && (
         <TablePlayers players={displayedPlayers} isLoading={isLoading} />
       )}
-      <div className="flex justify-end">
+      <div className="flex justify-end mt-2.5 md:mt-0 mr-10 md:mr-0">
         {meta && (
           <Pagination
             page={meta.current_page}

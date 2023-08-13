@@ -147,7 +147,7 @@ export function Hamburger() {
                       <IconUSA />
                     </button>
                   </div>
-                  <div className="flex gap-2 mt-5">
+                  <div className="flex flex-col gap-2 mt-5">
                     <div className="flex items-center">
                       <div>
                         <IconTheme />
